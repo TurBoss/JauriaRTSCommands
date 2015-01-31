@@ -10,52 +10,56 @@ local unitDef = {
 
 	--cost
 
-	buildCostMetal = 135,
+	buildCostMetal = 100,
 	buildCostEnergy = 0,
-	buildTime = 6.75,
+	buildTime = 2,
 
 	--Health
 
-	maxDamage = 2610,
-	idleAutoHeal = 22,
+	maxDamage = 3000,
+	idleAutoHeal = 5,
 	idleTime     = 3,
 
 	--Movement
 
-	mass=880,
-	Acceleration = 1.2,
-	BrakeRate = 2.2,
+	moveState = 0,
+	mass=500,
+	Acceleration = 0.15,
+	BrakeRate = 0.03,
 	FootprintX = 1,
 	FootprintZ = 1,
 	MaxSlope = 12,
-	MaxVelocity = 3.8,
+	MaxVelocity = 1.05,
 	MaxWaterDepth = 20,
 	MovementClass = "Default1x1",
-	TurnRate = 2620,
+	TurnRate = 880,
 
 	sightDistance = 420,
 
 	Category = [[LAND]],
-
+	
+	CanManualFire = true,
 	CanAttack = true,
 	CanGuard = true,
 	CanMove = true,
 	CanPatrol = true,
 	CanStop = true,
-	LeaveTracks = false, 
+	LeaveTracks = false,
 
-	sfxtypes = {
+
+	--[[sfxtypes = {
 		explosiongenerators = {
 			"custom:smoke2",
 		},
-	},
+	},--]]
 
 
 	weapons = {
-		[1]={name  = "weaponberserker",
-			onlyTargetCategory = [[LAND AIR]],
-			maxAngleDif = 210,
-			mainDir = [[0 0 1]],
+		[1]={name  = "pistola",
+			onlyTargetCategory = [[LAND]],
+		},
+		[3]={name  = "lanzamisiles",
+			onlyTargetCategory = [[LAND]],
 		},
 	},
 }

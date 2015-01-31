@@ -28,7 +28,7 @@ local weaponDef={
 	commandfire = true,
 	----APPEARANCE
 	
-	model="cobete.dae",
+	model="misil.dae",
 	smokeTrail=true,
 	--explosionGenerator="custom:explosion1",
 	CegTag="light1",

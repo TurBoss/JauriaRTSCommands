@@ -25,13 +25,13 @@ local devolution = (-1 > 0)
 
 
 local morphDefs = {
-        torreta = {
+        --[[torreta = {
                 into = 'torretapro',
                 time = 50,
                 --xp = .015
                 metal = 800,
                 --tech = 2
-        },
+        },]]--
 }
 
 --
