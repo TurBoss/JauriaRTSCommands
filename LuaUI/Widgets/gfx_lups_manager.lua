@@ -79,7 +79,7 @@ end
 local UnitEffects = {
 
 	
-	[UnitDefNames["doverkraft"].id] = {
+	--[[[UnitDefNames["doverkraft"].id] = {
 		{class='Ribbon',options={width=1, size=12, piece="ribbon1"}},
 		{class='Ribbon',options={width=1, size=12, piece="ribbon2"}},
 		
@@ -128,7 +128,7 @@ local UnitEffects = {
 	
 	[UnitDefNames["dhipso"].id] = {
 		{class='ShieldJitter',options={size = 130, strength = 0.005,}},
-	},
+	},]]--
 }
 local registeredUnits = {}	-- all finished units - prevents partial unbuild then rebuild from being treated as two UnitFinished events
 
