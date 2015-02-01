@@ -163,19 +163,9 @@ local function CreateWindow()
 				if index == 7 then
 					spawnerWindow:Dispose()
 					spawnerWindow = nil
-					--Spring.Echo(selected)
-					
-					--for ind,data in ipairs(selected) do
-						--Spring.Echo(data.id)
-						--for j,value in pairs(data) do
-							--Spring.Echo(ind,j,value)
-						--end
-					--end
 					
 					for ind,data in ipairs(selected) do
-						
-						--Spring.Echo('selectedstartunit:' .. Spring.GetMyTeamID() .. ',' .. data.id)
-						spSendLuaRulesMsg('selectedstartunit:' .. Spring.GetMyTeamID() .. ',' .. data.id)
+						spSendLuaRulesMsg('selectedstartunit:' .. data.id)
 					end
 				else
 					CreateTooltip()
