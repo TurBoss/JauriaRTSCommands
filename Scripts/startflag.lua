@@ -14,8 +14,6 @@ local bandera = piece "bandera"
 --------------------------------------------------------------------------------
 
 function script.Create ()
-	--Spring.Echo(select(1,Spring.GetWind ()))
-	--Turn(bola, z_axis, 120, math.rad(20))
 end
 
 function script.WindChanged(heading, strength)

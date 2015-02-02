@@ -1,12 +1,12 @@
-local unitName = "bheikthief"
+local unitName = "heikthief"
 
 local unitDef = {
 	name = "Heikthief",
 	Description = "Complex, mobile unit.",
 	objectName = "heikthief.dae",
 	script = "blank",
-	buildPic = "placeholder.png",
-	iconType = "rk2",
+	buildPic = "heikthief.png",
+	iconType = "mn1",
 
 	--cost
 
@@ -43,6 +43,7 @@ local unitDef = {
 	CanPatrol = true,
 	CanStop = true,
 	LeaveTracks = false, 
+	UpRight = true,
 
 
 	weapons = {

@@ -48,8 +48,10 @@ local unitDef = {
 	CanMove = false,
 	CanPatrol = false,
 	CanStop = false,
+	--CanSelfDestruct = false
 	LeaveTracks = false,
 	noAutoFire = false, 
+	selectable = false,
 
 	--CanCloak = true,
 	--MinCloakDistance = 150,

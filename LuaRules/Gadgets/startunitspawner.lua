@@ -10,6 +10,8 @@ function gadget:GetInfo()
 	}
 end
 
+local DelayCall = GG.Delay.DelayCall
+
 local	spIsCheatingEnabled	= Spring.IsCheatingEnabled
 local	spCreateUnit		= Spring.CreateUnit
 
@@ -39,10 +41,7 @@ function CreateUnit(selectedUnitDefId, playerID)
 	
 	local flagX, flagY, flagZ = Spring.GetUnitPosition(startflagUID)
 	
-	Spring.Echo(flagX)
 	flagX = flagX + math.random (20,30)
-	
-	Spring.Echo(flagX)
 	flagZ = flagZ + math.random (20,30)
 	
 	spCreateUnit(	unitName, flagX, flagY, 
@@ -53,6 +52,7 @@ function gadget:RecvLuaMsg(msg, playerID)
 	if (msg:sub(1,18) == 'selectedstartunit:') then
 		
 		local selectedUnitDefId		= tonumber(msg:sub(19))
-		CreateUnit(selectedUnitDefId, playerID)
+		DelayCall(CreateUnit, {selectedUnitDefId, playerID}, 90)
+		--CreateUnit(selectedUnitDefId, playerID)
 	end
 end

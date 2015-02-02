@@ -5,7 +5,7 @@ local unitDef = {
 	Description = "Complex, mobile unit.",
 	objectName = "franco.dae",
 	script = "franco.lua",
-	buildPic = "placeholder.png",
+	buildPic = "franco.png",
 	--iconType = "rk2",
 
 	--cost
@@ -43,7 +43,8 @@ local unitDef = {
 	CanMove = true,
 	CanPatrol = true,
 	CanStop = true,
-	LeaveTracks = false, 
+	LeaveTracks = false,
+	UpRight = true,
 
 
 	weapons = {

@@ -10,17 +10,19 @@ function widget:GetInfo()
 	}
 end
 
+
 local artillero		= UnitDefNames.artillero
 local franco		= UnitDefNames.franco
 local asesino		= UnitDefNames.asesino
 local soldado		= UnitDefNames.soldado
-
+local heikthief		= UnitDefNames.heikthief
 
 local units = {
 	artillero,
 	franco,
 	asesino,
 	soldado,
+	heikthief,
 }
 
 local selected = {
@@ -33,6 +35,7 @@ local tooltip = 0
 
 local spGetViewGeometry	= Spring.GetViewGeometry
 local spSendLuaRulesMsg	= Spring.SendLuaRulesMsg
+local speccing = Spring.GetSpectatingState()
 
 local screenSizeX, screenSizeY	= spGetViewGeometry()
 local Chili
@@ -147,6 +150,32 @@ local function CreateWindow()
 		draggable	= false;
 		resizable	= false;
 	}
+	clearButton		= Chili.Button:New{
+		width = 80,
+		height = 30,
+		y = "86%",
+		x = "60%",
+		parent=spawnerWindow;
+		padding = {0, 0, 0,0},
+		margin = {0, 0, 0, 0},
+		backgroundColor = {1, 1, 1, 1},
+		caption = "Clear",
+		tooltip = "Clear the selected units";
+		OnClick = {
+			function()
+				
+				for i,unitDef in pairs(selected) do
+
+					if unitSelectedButtons[i] then
+						unitSelectedButtons[i]:Dispose()
+						unitSelectedButtons[i] = nil
+					end
+				end
+				index = 1
+				selected = {}
+			end
+		}
+	}
 	okButton		= Chili.Button:New{
 		width = 80,
 		height = 30,
@@ -199,7 +228,6 @@ local function BuildUnitButtons()
 				function()
 					if index <= 6 then
 						selected[#selected+1] = unitDef
-
 						index = index + 1
 						update = 1
 					end
@@ -208,7 +236,7 @@ local function BuildUnitButtons()
 			children = {
 				Chili.Image:New{
 					file	= ":cl:UnitPics/" .. unitDef.buildpicname;
-					color	= grey;
+					--color	= grey;
 					x		= 0;
 					y		= 0;
 					width	= "100%";  
@@ -233,17 +261,16 @@ local function BuildSelectedButtons()
 	local textSize		= math.floor(screenSizeX/120)
 	
 	for i,unitDef in pairs(selected) do
+	
 		if unitSelectedButtons[i] then
 			unitSelectedButtons[i]:Dispose()
 			unitSelectedButtons[i] = nil
 		end
-	end
-	
-	for i,unitDef in pairs(selected) do
+		
 		local gridXPos		=	screenSizeX/ 19 * counterX
 		local gridYPos		=	screenSizeX/ 19 * counterY
 		
-		unitSelectedButtons[i]	= Chili.Button:New{
+		unitSelectedButtons[i]	= Chili.Panel:New{
 			parent				= selectedPanel;
 			tooltip				= unitDef.humanName or "";
 			caption				= unitDef.name or "";
@@ -252,7 +279,7 @@ local function BuildSelectedButtons()
 			width				= basesize;
 			height				= basesize;
 			fontsize			= textSize;
-			OnClick = { 
+			--[[OnClick = { 
 				function()
 					
 					if unitSelectedButtons[i] then
@@ -270,15 +297,15 @@ local function BuildSelectedButtons()
 					end
 					
 				end
-			};
+			};]]--
 			children = {
 				Chili.Image:New{
 					file	= ":cl:UnitPics/" .. unitDef.buildpicname;
-					color	= grey;
-					x		= 0;
-					y		= 0;
-					width	= "100%";  
-					height	= "100%";
+					--color	= grey;
+					x		= "7%";
+					y		= "7%";
+					width	= "90%";  
+					height	= "90%";
 				}
 			};
 		}
@@ -294,8 +321,8 @@ function widget:Initialize()
 		return
 	end
 	
-	CreateWindow()
-	BuildUnitButtons()
+	--CreateWindow()
+	--BuildUnitButtons()
 end
 
 function widget:Update()
@@ -306,5 +333,8 @@ function widget:Update()
 end
 
 function widget:GameStart()
-	--CreateWindow()
+	if not speccing then
+		CreateWindow()
+		BuildUnitButtons()
+	end
 end
