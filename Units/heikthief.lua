@@ -1,12 +1,12 @@
 local unitName = "heikthief"
 
 local unitDef = {
-	name = "Heikthief",
-	Description = "Complex, mobile unit.",
-	objectName = "heikthief.dae",
-	script = "blank",
-	buildPic = "heikthief.png",
-	iconType = "mn1",
+	name			= "Heikthief",
+	Description		= "Complex, mobile unit.",
+	objectName		= "heikthief.dae",
+	script			= "heikthief.lua",
+	buildPic		= "heikthief.png",
+	iconType		= "mn1",
 
 	--cost
 
