@@ -24,7 +24,7 @@ local fx = {
       heat         = 2,
     },
 
-    flame = {
+    flame1 = {
       class        = 'SimpleParticles2',
       colormap     = { {1, 1, 1, 0.01},
                        {1, 1, 1, 0.01},

@@ -1,35 +1,32 @@
 function gadget:GetInfo()
 	return {
-		name		= "Unit death counter",
-		desc		= "counts dead units.",
-		author		= "TurBoss",
-		date		= "3/2/2015",
-		license		= "GNU GPL V2 or Later",
-		layer		= 0,
-		enabled		= true  -- loaded by default?
+		name      = "Unit death",
+		desc      = "counts dead units.",
+		author      = "TurBoss",
+		date      = "3/2/2015",
+		license      = "GNU GPL V2 or Later",
+		layer      = 5,
+		enabled      = true  -- loaded by default?
 	}
+	end
+
+if (not gadgetHandler:IsSyncedCode()) then
+	return false
 end
 
-if (gadgetHandler:IsSyncedCode()) then
-	
+local unitDestroyedCounterA = 0
+local unitDestroyedCounterB = 0
+
 	function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
-		SendToUnsynced("DeathEvent", unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
-	end
-	
-else
-	
-	function WrapToLuaUI(_, unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
-		if (Script.LuaUI('DeathEvent')) then
-			Script.LuaUI.DeathEvent(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+		if ((attackerTeam == 0) and ( attackerTeam ~= unitTeam)) then
+			unitDestroyedCounterA = unitDestroyedCounterA +1
+		elseif ((attackerTeam == 1) and ( attackerTeam ~= unitTeam)) then
+			unitDestroyedCounterB = unitDestroyedCounterB +1
 		end
+		Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
+		Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
 	end
-	
 	function gadget:Initialize()
-		gadgetHandler:AddSyncAction("DeathEvent", WrapToLuaUI)
+		Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
+		Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
 	end
-	
-	function gadget:ShutDown()
-		gadgetHandler:RemoveSyncAction("DeathEvent")
-	end
-	
-end

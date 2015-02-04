@@ -10,17 +10,17 @@ function gadget:GetInfo()
 	}
 end
 
+-- SYNCED only
+if not gadgetHandler:IsSyncedCode() then
+	return
+end
+
 local DelayCall = GG.Delay.DelayCall
 
 local	spIsCheatingEnabled	= Spring.IsCheatingEnabled
 local	spCreateUnit		= Spring.CreateUnit
 
 local startflagUID = 0
-
--- SYNCED only
-if not gadgetHandler:IsSyncedCode() then
-	return
-end
 
 function gadget:Initialize()
 end

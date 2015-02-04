@@ -121,15 +121,24 @@ function widget:Initialize()
 		widgetHandler:RemoveWidget()
 		return
 	end
+	
 	CreateWindow()
 	UpdateCounter()
 end
 
-function DeathEvent(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
-	Spring.Echo("LOL")
-	counterLabel1:Dispose()
-	counterLabel1 = nil
-	counterLabel2:Dispose()
-	counterLabel2 = nil
-	UpdateCounter()
+function widget:Shutdown()
+	widgetHandler:DeregisterGlobal('DeathEvent')
+end
+
+function widget:GameFrame(f)
+	if (f % 180 ==0) then 
+		Spring.Echo("UPDATE")
+		unitDestroyedCounterA = Spring.GetGameRulesParam("unitDestroyedCounterA")
+		unitDestroyedCounterB = Spring.GetGameRulesParam("unitDestroyedCounterB")
+		counterLabel1:Dispose()
+		counterLabel1 = nil
+		counterLabel2:Dispose()
+		counterLabel2 = nil
+		UpdateCounter()
+	end
 end

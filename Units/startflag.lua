@@ -16,9 +16,9 @@ local unitDef = {
 
 	--Health
 
-	maxDamage = 980,
-	idleAutoHeal = 14,
-	idleTime     = 3,
+	maxDamage = 250000,
+	idleAutoHeal = 1000,
+	idleTime     = 0,
 
 	--Kamikaze = true,
 	--KamikazeDistance = 100,

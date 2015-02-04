@@ -12,6 +12,11 @@ function gadget:GetInfo()
     }
 end
 
+-- SYNCED only
+if not gadgetHandler:IsSyncedCode() then
+	return
+end
+
 local AI_Debug_Mode = 0 -- Must be 0 or 1
 
 local function ChangeAIDebugVerbosity(cmd,line,words,player)
