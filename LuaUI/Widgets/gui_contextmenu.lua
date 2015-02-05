@@ -1141,8 +1141,8 @@ local function printunitinfo(ud, lang, buttonWidth)
 	statschildren[#statschildren+1] = Label:New{ caption = 'STATS', textColor = color.stats_header, }
 	statschildren[#statschildren+1] = Label:New{ caption = '', textColor = color.stats_header, }
 
-	statschildren[#statschildren+1] = Label:New{ caption = 'Cost: ', textColor = color.stats_fg, }
-	statschildren[#statschildren+1] = Label:New{ caption = cost, textColor = color.stats_fg, }
+	--statschildren[#statschildren+1] = Label:New{ caption = 'Cost: ', textColor = color.stats_fg, }
+	--statschildren[#statschildren+1] = Label:New{ caption = cost, textColor = color.stats_fg, }
 	
 	statschildren[#statschildren+1] = Label:New{ caption = 'Max HP: ', textColor = color.stats_fg, }
 	statschildren[#statschildren+1] = Label:New{ caption = numformat(ud.health), textColor = color.stats_fg, }
