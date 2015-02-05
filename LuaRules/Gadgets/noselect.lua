@@ -10,12 +10,19 @@ function gadget:GetInfo()
 	}
 end
 
+-- synced only
+if (not gadgetHandler:IsSyncedCode()) then
+	return false
+end
+
 function gadget:GameStart()
 	local units = Spring.GetAllUnits()
 	for i, unit in pairs(units) do
 		--Spring.Echo(unit)
 		if Spring.GetUnitDefID(unit) == UnitDefNames.startflag.id then
-			Spring.SetUnitNoSelect(unit, true)
+		Spring.SetUnitAlwaysVisible (unit,true)
+		Spring.SetUnitNoSelect (unit, true)
+		Spring.SetUnitNeutral (unit, true)
 		end
 	end
 end

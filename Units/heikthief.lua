@@ -35,6 +35,10 @@ local unitDef = {
 
 	sightDistance = 340,
 
+	CanCloak = true,
+	MinCloakDistance = 150,
+	InitCloaked = true,
+	
 	Category = [[LAND]],
 	CanManualFire = true, 
 	CanAttack = true,

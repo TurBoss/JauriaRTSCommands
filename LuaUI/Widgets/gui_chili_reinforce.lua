@@ -16,6 +16,8 @@ local asesino		= UnitDefNames.asesino
 local soldado		= UnitDefNames.soldado
 local heikthief		= UnitDefNames.heikthief
 
+local mina 			= UnitDefNames.mina.id
+
 local units = {
 	artillero,
 	franco,
@@ -148,6 +150,10 @@ function widget:Initialize()
 end
 
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+	if unitDefID == mina then
+		return
+	end
+
 	if unitTeam == Spring.GetMyTeamID() then
 		if index == 0 then
 			CreateWindow()

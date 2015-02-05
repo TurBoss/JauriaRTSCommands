@@ -16,19 +16,15 @@ local unitDef = {
 
 	--Health
 
-	maxDamage = 250000,
-	idleAutoHeal = 1000,
-	idleTime     = 0,
-
-	--Kamikaze = true,
-	--KamikazeDistance = 100,
-	--selfDestructAs = "mina",
-	--explodeAs = "mina",
+	HideDamage		= 1,
+	maxDamage		= 250000,
+	idleAutoHeal	= 1000,
+	idleTime		= 0,
 
 	--Movement
 	
 	moveState = 0,
-	mass=600,
+	mass=10000,
 	Acceleration = 0,
 	BrakeRate = 0,
 	FootprintX = 1,
@@ -48,20 +44,9 @@ local unitDef = {
 	CanMove = false,
 	CanPatrol = false,
 	CanStop = false,
-	--CanSelfDestruct = false
 	LeaveTracks = false,
-	noAutoFire = false, 
-	selectable = false,
+	noAutoFire = false,
 
-	--CanCloak = true,
-	--MinCloakDistance = 150,
-	--InitCloaked = true,
-
-
-
-	--weapons = {
-	--
-	--},
 }
 
 return lowerkeys({ [unitName] = unitDef })

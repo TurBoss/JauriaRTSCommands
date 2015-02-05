@@ -44,7 +44,7 @@ local DELAY_SHOOT = 520
 -- vars
 --------------------------------------------------------------------------------
 
-local isMoving, isShooting, weaponAim = false, false, false
+local isMoving, isShooting, aimWeapon = false, false, false
 
 --------------------------------------------------------------------------------
 -- tables
@@ -854,7 +854,7 @@ end
 
 function script.StartMoving(heading)
 	
-	Turn(coxis, z_axis, heading, math.rad(80))
+	--Turn(coxis, z_axis, heading, math.rad(80))
 	
 	StartThread (Walk)
 	StartThread (MoveTorso)
