@@ -357,6 +357,7 @@ function resign()
 			Spring.SendLuaRulesMsg('resign' .. playerID)
 		end
 	end
+	DestroyResignWindow()
 end
 
 function quit()
@@ -369,6 +370,7 @@ function quit()
 			Spring.SendLuaRulesMsg('quit' .. playerID)
 		end
 	end
+	DestroyExitWindow()
 end
 
 function quitSpec()

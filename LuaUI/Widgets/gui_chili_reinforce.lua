@@ -149,6 +149,10 @@ function widget:Initialize()
 	
 end
 
+function widget:GameOver()
+	widgetHandler:RemoveWidget()
+end
+
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
 	if unitDefID == mina then
 		return
