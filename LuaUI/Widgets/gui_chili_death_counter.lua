@@ -90,8 +90,10 @@ function UpdateCounter()
 		caption		= unitDestroyedCounterA;
 		fontsize	= math.floor(screenSizeX/50);
 		padding 	= {0,0,0,0};
-		x			= "40%";
-		y			= "0";
+		valign		= 'center';
+		halign		= 'center';
+		x			= "30%";
+		y			= "25%";
 		width		= "40%";
 		height		= "55%";
 		dockable	= false;
@@ -104,8 +106,9 @@ function UpdateCounter()
 		caption		= unitDestroyedCounterB;
 		fontsize	= math.floor(screenSizeX/50);
 		padding 	= {0,0,0,0};
-		x			= "40%";
-		y			= "0";
+		valign		= 'center';
+		x			= "30%";
+		y			= "25%";
 		width		= "40%";
 		height		= "55%";
 		dockable	= false;
@@ -132,7 +135,6 @@ end
 
 function widget:GameFrame(f)
 	if (f % 180 ==0) then 
-		Spring.Echo("UPDATE")
 		unitDestroyedCounterA = Spring.GetGameRulesParam("unitDestroyedCounterA")
 		unitDestroyedCounterB = Spring.GetGameRulesParam("unitDestroyedCounterB")
 		counterLabel1:Dispose()

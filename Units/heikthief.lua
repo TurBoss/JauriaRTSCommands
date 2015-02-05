@@ -47,11 +47,15 @@ local unitDef = {
 
 
 	weapons = {
-		[1]={name  = "weaponheik",
+		[1]={name  = "metralleta",
 			onlyTargetCategory = [[LAND]],
+			maxAngleDif = 210,
+			mainDir = [[0 0 1]],
 		},
-		[2]={name  = "dguntest",
+		[3]={name  = "dguntest",
 			onlyTargetCategory = [[LAND]],
+			maxAngleDif = 210,
+			mainDir = [[0 0 1]],
 		},
 		--[2]={name  = "shieldheik",
 		--},

@@ -17,16 +17,17 @@ end
 local unitDestroyedCounterA = 0
 local unitDestroyedCounterB = 0
 
-	function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
-		if ((attackerTeam == 0) and ( attackerTeam ~= unitTeam)) then
-			unitDestroyedCounterA = unitDestroyedCounterA +1
-		elseif ((attackerTeam == 1) and ( attackerTeam ~= unitTeam)) then
-			unitDestroyedCounterB = unitDestroyedCounterB +1
-		end
-		Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
-		Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
+function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+	if ((attackerTeam == 0) and ( attackerTeam ~= unitTeam)) then
+		unitDestroyedCounterA = unitDestroyedCounterA +1
+	elseif ((attackerTeam == 1) and ( attackerTeam ~= unitTeam)) then
+		unitDestroyedCounterB = unitDestroyedCounterB +1
 	end
-	function gadget:Initialize()
-		Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
-		Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
-	end
+	Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
+	Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
+end
+
+function gadget:Initialize()
+	Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
+	Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
+end

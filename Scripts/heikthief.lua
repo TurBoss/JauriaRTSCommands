@@ -401,23 +401,12 @@ local function RestorePoseTorso()
 	Sleep(RESTORE_DELAY_SHOOT)
 	if not isShooting then
 		PlayAnimation('restoreTorsoAnimation')
-	else
-		PlayAnimation('restoreShootAnimation')
 	end
 	isShooting = false
 	aimWeapon = false
 end
 
-local function PoseShoot()
-	Signal(SIG_AIM1)
-	SetSignalMask(SIG_AIM1)
-	PlayAnimation('shootAnimation')
-	aimWeapon = true
-end
-
 function script.StartMoving(heading)
-	
-	--Turn(coxis, z_axis, heading, math.rad(80))
 	
 	StartThread (Walk)
 	StartThread (MoveTorso)
@@ -447,6 +436,10 @@ end
 --can be used delay the shooting until a "turn turret" animation is completed
 
 function script.AimWeapon(num, heading, pitch )
+	Turn(torso, z_axis, heading,  math.rad(180))
+	Turn(brazo, x_axis, -pitch-1.6, math.rad(180))
+	WaitForTurn(brazo, x_axis)
+	isShooting = true
 	return true
 end
 --called after the weapon has fired

@@ -147,17 +147,12 @@ function widget:Initialize()
 	
 end
 
-function widget:Update()
-	if update == 1 then
-		BuildSelectedButtons()
-		update = 0
+function widget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+	if unitTeam == Spring.GetMyTeamID() then
+		if index == 0 then
+			CreateWindow()
+			BuildUnitButtons()
+		end
+		index = index + 1
 	end
-end
-
-function widget:UnitDestroyed()
-	if index == 0 then
-		CreateWindow()
-		BuildUnitButtons()
-	end
-	index = index + 1
 end

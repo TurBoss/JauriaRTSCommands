@@ -50,9 +50,13 @@ local unitDef = {
 	weapons = {
 		[1]={name  = "pistola",
 			onlyTargetCategory = [[LAND]],
+			maxAngleDif = 210,
+			mainDir = [[0 0 1]],
 		},
 		[3]={name  = "riflefranco",
 			onlyTargetCategory = [[LAND]],
+			maxAngleDif = 210,
+			mainDir = [[0 0 1]],
 		},
 		--[2]={name  = "shieldheik",
 		--},
