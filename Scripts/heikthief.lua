@@ -28,6 +28,7 @@ local SIG_WALK1 = 2
 local SIG_AIM = 4
 local SIG_AIM1 = 8
 local SIG_RESTORE = 16
+local SIG_RC = 32
 
 local RESTORE_DELAY_SHOOT = 1500
 local DELAY_SHOOT = 520
@@ -415,6 +416,25 @@ function script.StopMoving()
 	StartThread(RestorePose)
 end
 
+
+--------BUILDING---------
+
+function script.StopBuilding()
+	--Turn (arma, z_axis, 0, math.rad(100))
+	SetUnitValue(COB.INBUILDSTANCE, 0)
+end
+
+function script.StartBuilding(heading, pitch)  
+	Signal(SIG_RC)
+	SetSignalMask(SIG_RC)
+	--Turn (arma, z_axis, heading, math.rad(100))
+	--WaitForTurn(arma, z_axis)
+	SetUnitValue(COB.INBUILDSTANCE, 1)
+end
+
+function script.QueryNanoPiece()
+	return flare
+end
 
 ---AIMING & SHOOTING---
 

@@ -48,7 +48,18 @@ local unitDef = {
 	CanStop = true,
 	LeaveTracks = false, 
 	UpRight = true,
-
+	
+	Builder = true,
+	ShowNanoSpray = false,
+	CanBeAssisted = false, 
+	workerTime = 0.50,
+	repairSpeed = 1,
+	reclaimSpeed = 1,
+	buildDistance = 30,
+	
+	buildoptions = {
+		"mina",
+	},
 
 	weapons = {
 		[1]={name  = "metralleta",
