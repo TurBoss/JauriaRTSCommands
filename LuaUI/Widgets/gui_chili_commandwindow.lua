@@ -48,23 +48,7 @@ local GetFullBuildQueue		= Spring.GetFullBuildQueue
 local spSendCommands		= Spring.SendCommands
 
 
--- SCRIPT FUNCTIONS
-
-local function UpdateFactoryBuildQueue(unitID) 
-	local result = {}
-	local queue = GetFullBuildQueue(unitID)
-	if (queue ~= nil) then
-		for _,buildPair in ipairs(queue) do
-			local udef, count = next(buildPair, nil)
-			if result[-udef]~=nil then
-				result[-udef] = result[-udef] + count
-			else
-				result[-udef] = count
-			end
-		end
-	end
-	return result
-end
+-- FUNCTIONS
 
 function LayoutHandler(xIcons, yIcons, cmdCount, commands)
 	widgetHandler.commands   = commands
@@ -112,6 +96,7 @@ function createMyButton(cmd, buildid)
 	if(type(cmd) == 'table')then
 		buttontext, container, isState, isBuild, texture = findButtonData(cmd)
 		buildings, isFactory = filterFactory(buildid)
+		--Spring.Echo(isFactory)
 		--Spring.Echo(buildings[1],isFactory)
 		if not isBuild then
 			local result = container.xstep % MAXBUTTONSONROW
@@ -158,15 +143,6 @@ function createMyButton(cmd, buildid)
 		elseif isBuild then
 			
 			local tooltip = "Build Unit: " .. UnitDefs[-cmd.id].humanName .. " - " .. UnitDefs[-cmd.id].tooltip .. "\n"
-			--Spring.Echo(tooltip)
-			local countText = ""
-			--if isFactory then
-			countText = UpdateFactoryBuildQueue(buildings[1])--,cmd.id)
-			if countText[cmd.id] == nil then
-				countText[cmd.id] = ""
-			end
-			--Spring.Echo(cmd.id)
-			--end
 			
 			local result = container.xstep % MAXBUTTONSONROWBUILD
 			container.xstep = container.xstep + 1
@@ -194,20 +170,6 @@ function createMyButton(cmd, buildid)
 				OnClick = {ClickFunc},
 			}
 			
-			local label = Chili.Label:New{
-				parent = button,
-				right = 0;
-				y = 5;
-				x = 5;
-				bottom = 3;
-				autosize=false;
-				align="right";
-				valign="bottom";
-				caption = string.format("%s ", countText[cmd.id]);
-				fontSize = 18;
-				fontShadow = true;
-			}
-			
 			local nameLabel = Chili.Label:New {
 				parent = button,
 				right = 0;
@@ -221,19 +183,7 @@ function createMyButton(cmd, buildid)
 				fontSize = 14;
 				fontShadow = true;
 			}
-			local costLabel = Chili.Label:New {
-				parent = button,
-				right = 0;
-				y = 2;
-				x = 5;
-				bottom = 3;
-				autosize=false;
-				align="left";
-				valign="bottom";
-				caption = string.format("%d m", UnitDefs[-cmd.id].metalCost);
-				fontSize = 14;
-				fontShadow = true;
-			}
+			
 			if texture then
 				if DEBUG then Spring.Echo("texture",texture) end
 				button:Resize(96,96)
@@ -403,7 +353,7 @@ function widget:Initialize()
 		draggable = false,
 		resizable = false,
 		dragUseGrip = false,
-		clientWidth = 780,
+		clientWidth = 105,
 		clientHeight = 100,
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",
