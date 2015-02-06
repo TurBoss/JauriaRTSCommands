@@ -59,7 +59,7 @@ local unitDef = {
 	buildDistance = 30,
 	
 	buildoptions = {
-		"mina",
+		"mine",
 	},
 
 

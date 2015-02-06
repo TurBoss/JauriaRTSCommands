@@ -16,7 +16,7 @@ local asesino		= UnitDefNames.asesino
 local soldado		= UnitDefNames.soldado
 local heikthief		= UnitDefNames.heikthief
 
-local mina 			= UnitDefNames.mina.id
+local mine 			= UnitDefNames.mine.id
 
 local units = {
 	artillero,
@@ -154,7 +154,7 @@ function widget:GameOver()
 end
 
 function widget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
-	if unitDefID == mina then
+	if unitDefID == mine then
 		return
 	end
 

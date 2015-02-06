@@ -1,18 +1,21 @@
-local unitName = "mina"
+local unitName = "mine"
 
 local unitDef = {
-	name = "mina",
+
+	Category = "LAND",
+	name = "Mine",
 	Description = "",
-	objectName = "mina.dae",
-	script = "mina.lua",
-	buildPic = "placeholder.png",
+	objectName = "mine.dae",
+	script = "mine.lua",
+	buildPic = "mine.png",
 	--iconType = "rk2",
 
 	--cost
 
-	buildCostMetal = 85,
+	buildCostMetal = 0,
 	buildCostEnergy = 0,
 	buildTime = 4.25,
+	reclaimable = false,
 
 	--Health
 
@@ -22,8 +25,9 @@ local unitDef = {
 
 	Kamikaze = true,
 	KamikazeDistance = 100,
-	selfDestructAs = "mina",
-	explodeAs = "mina",
+	selfDestructAs = "mine",
+	explodeAs = "mine",
+	selfDestructCountdown = 0,
 
 	--Movement
 	
@@ -48,11 +52,12 @@ local unitDef = {
 	CanPatrol = false,
 	CanStop = false,
 	LeaveTracks = false,
-	noAutoFire = false, 
+	noAutoFire = false,
 
 	CanCloak = true,
 	MinCloakDistance = 150,
 	InitCloaked = true,
+	stealth = true,
 
 
 

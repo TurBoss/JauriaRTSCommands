@@ -1,7 +1,7 @@
-local weaponName="mina"
+local weaponName="mine"
 
 local weaponDef={
-	name="mina",
+	name="mine",
 	
 	weaponType=[[MissileLauncher]],
 	
@@ -23,7 +23,7 @@ local weaponDef={
 	
 	----APPEARANCE
 	
-	model="mina.dae",
+	model="mine.dae",
 	smokeTrail=false,
 	explosionGenerator			= [[custom:genericshellexplosion-medium-red]],
 	
