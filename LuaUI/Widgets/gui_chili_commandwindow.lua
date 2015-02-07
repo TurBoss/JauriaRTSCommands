@@ -109,30 +109,18 @@ function createMyButton(cmd, buildid)
 			local color = {0,0,0,1}
 			local button = Chili.Button:New {
 				parent = container,
-				x = 45 * (result-1),
-				y = 20 * (container.ystep-1),
+				--x = math.floor(screenWidth/120) * (result-1),
+				y = math.floor(screenWidth/70) * (container.ystep-1),
 				padding = {5, 5, 5, 5},
-				margin = {5, 5, 5, 5},
-				minWidth = 40,
-				minHeight = 20,
+				margin = {0, 0, 0, 0},
+				width = "100%",
+				height = math.floor(screenWidth/70),
 				caption = buttontext,
+				fontSize = math.floor(screenWidth/120);
 				isDisabled = false,
 				cmdid = cmd.id,
 				OnClick = {ClickFunc},
 			}
-			
-			if texture then
-				if DEBUG then Spring.Echo("texture",texture) end
-				button:Resize(96,96)
-				image= Chili.Image:New {
-					width="100%";
-					height="90%";
-					y="6%";
-					keepAspect = true,	--isState;
-					file = texture;
-					parent = button;
-				}		
-			end
 			
 			if(increaseRow)then
 				container.ystep = container.ystep+1
@@ -171,7 +159,7 @@ function createMyButton(cmd, buildid)
 				align="left";
 				valign="top";
 				caption = string.format("%s ", UnitDefs[-cmd.id].humanName);
-				fontSize = 14;
+				fontSize = math.floor(screenWidth/100);
 				fontShadow = true;
 			}
 			
@@ -309,8 +297,9 @@ function widget:Initialize()
 		draggable = false,
 		resizable = false,
 		dragUseGrip = false,
-		clientWidth = 80,
-		clientHeight = 210,
+		width = "8%",
+		height = "28%",
+		fontSize = math.floor(screenWidth/100);
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",
 		children = {commandWindow},
@@ -324,8 +313,9 @@ function widget:Initialize()
 		draggable = false,
 		resizable = false,
 		dragUseGrip = false,
-		clientWidth = 80,
-		clientHeight = 70,
+		width = "8%",
+		height = "11.5%",
+		fontSize = math.floor(screenWidth/100);
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",
 		children = {stateCommandWindow},
@@ -339,8 +329,9 @@ function widget:Initialize()
 		draggable = false,
 		resizable = false,
 		dragUseGrip = false,
-		clientWidth = 80,
-		clientHeight = 70,
+		width = "8%",
+		height = "11.5%",
+		fontSize = math.floor(screenWidth/100);
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",
 		children = {buildCommandWindow},

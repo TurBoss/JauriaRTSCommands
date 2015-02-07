@@ -138,8 +138,8 @@ function widget:GameFrame(f)
 		unitDestroyedCounterA = Spring.GetGameRulesParam("unitDestroyedCounterA")
 		unitDestroyedCounterB = Spring.GetGameRulesParam("unitDestroyedCounterB")
 		counterLabel1:Dispose()
-		counterLabel1 = nil
 		counterLabel2:Dispose()
+		counterLabel1 = nil
 		counterLabel2 = nil
 		UpdateCounter()
 	end
