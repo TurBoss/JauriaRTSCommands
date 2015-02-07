@@ -44,8 +44,8 @@ function CreateWindow()
 	local screen0 = Chili.Screen0
 	
 	ctrlWindow = Chili.Window:New{
-		x = 0,
-		y = 220,
+		x = "80%",
+		y = "0%",
 		align="right";
 		valign="top";
 		dockable = true,

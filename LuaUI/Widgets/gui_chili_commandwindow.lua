@@ -95,9 +95,7 @@ end
 function createMyButton(cmd, buildid)
 	if(type(cmd) == 'table')then
 		buttontext, container, isState, isBuild, texture = findButtonData(cmd)
-		buildings, isFactory = filterFactory(buildid)
-		--Spring.Echo(isFactory)
-		--Spring.Echo(buildings[1],isFactory)
+		
 		if not isBuild then
 			local result = container.xstep % MAXBUTTONSONROW
 			container.xstep = container.xstep + 1
@@ -144,13 +142,6 @@ function createMyButton(cmd, buildid)
 			
 			local tooltip = "Build Unit: " .. UnitDefs[-cmd.id].humanName .. " - " .. UnitDefs[-cmd.id].tooltip .. "\n"
 			
-			local result = container.xstep % MAXBUTTONSONROWBUILD
-			container.xstep = container.xstep + 1
-			local increaseRow = false
-			if(result==0)then
-				result = MAXBUTTONSONROWBUILD
-				increaseRow = true
-			end
 			
 			
 			local color = {0,0,0,1}
@@ -158,12 +149,12 @@ function createMyButton(cmd, buildid)
 				name = UnitDefs[-cmd.id],
 				tooltip = tooltip,
 				parent = container,
-				x = 96 * (result-1),
-				y = 96 * (container.ystep-1),
+				x = 0,
+				y = 0,
 				padding = {5, 5, 5, 5},
 				margin = {0, 0, 0, 0},
-				minWidth = 40,
-				minHeight = 40,
+				width = "100%";
+				height = "100%";
 				caption = buttontext,
 				isDisabled = false,
 				cmdid = cmd.id,
@@ -186,19 +177,14 @@ function createMyButton(cmd, buildid)
 			
 			if texture then
 				if DEBUG then Spring.Echo("texture",texture) end
-				button:Resize(96,96)
 				image= Chili.Image:New {
 					width="100%";
-					height="90%";
+					height="85%";
 					y="6%";
 					keepAspect = true,	--isState;
 					file = texture;
 					parent = button;
 				}		
-			end
-			
-			if(increaseRow)then
-				container.ystep = container.ystep+1
 			end
 		end
 	end
@@ -315,8 +301,8 @@ function widget:Initialize()
 	}		
 	
 	window0 = Chili.Window:New{
-		x = 10,
-		y = screenHeight-245,	
+		x = "18%",
+		y = "72.3%",
 		dockable = false,
 		parent = screen0,
 		caption = "Commands",
@@ -330,8 +316,8 @@ function widget:Initialize()
 		children = {commandWindow},
 	}
 	window1 = Chili.Window:New{
-		x = 120,
-		y = screenHeight-240,
+		x = "26%",
+		y = "88.6%",
 		dockable = false,
 		parent = screen0,
 		caption = "States",
@@ -345,16 +331,16 @@ function widget:Initialize()
 		children = {stateCommandWindow},
 	}
 	window2 = Chili.Window:New{
-		x = 120,
-		y = screenHeight-135,
+		x = "34%",
+		y = "88.6%",
 		dockable = false,
 		parent = screen0,
-		caption = "Construction",
+		caption = "Item",
 		draggable = false,
 		resizable = false,
 		dragUseGrip = false,
-		clientWidth = 105,
-		clientHeight = 100,
+		clientWidth = 80,
+		clientHeight = 70,
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",
 		children = {buildCommandWindow},

@@ -54,7 +54,7 @@ local function CreateWindow()
 		parent		= Chili.Screen0;
 		name		= "main window"..index;
 		x			= "30%";
-		y			= "25%";
+		y			= "65%";
 		width		= "40%";
 		height		= "20%";
 		dockable	= false;

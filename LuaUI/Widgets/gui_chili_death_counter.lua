@@ -31,8 +31,8 @@ local function CreateWindow()
 	counterWindow	= Chili.Window:New{
 		parent		= Chili.Screen0;
 		name		= "counter window";
-		x			= "80%";
-		y			= "3.5%";
+		x			= "45%";
+		y			= "90%";
 		width		= "15%";
 		height		= "10%";
 		dockable	= false;
