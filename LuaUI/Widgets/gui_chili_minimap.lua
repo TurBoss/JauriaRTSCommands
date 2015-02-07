@@ -43,12 +43,12 @@ local function MakeMinimapWindow(screenH)
 		h = w / aspect
 	end
 	
-	minimap = Chili.Panel:New{
+	minimap = Chili.Window:New{
 		name      = "Minimap", 
 		parent    = Chili.Screen0,
 		draggable = false,
-		width     = w, 
-		height    = h,
+		width     = "18%", 
+		height    = "28%",
 		x         = 0,
 		bottom    = 0,
 		padding   = {6,6,6,6},
