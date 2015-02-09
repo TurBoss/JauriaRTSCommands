@@ -100,11 +100,11 @@ local function CreateWindow()
 	
 end
 
-function drawWeapon()
+function drawWeapon(weapon)
 
 	weaponImage1 = Chili.Image:New {
 		parent = inventoryPanel1;
-		file = ":cl:luaui/images/weapons/weapon.png";
+		file = ":cl:luaui/images/weapons/"..weapon[1]..".png";
 		x		= 0;
 		y		= 0;
 		width	= "100%";
@@ -113,7 +113,7 @@ function drawWeapon()
 	
 	weaponImage2 = Chili.Image:New {
 		parent = inventoryPanel2;
-		file = ":cl:luaui/images/weapons/weapon.png";
+		file = ":cl:luaui/images/weapons/"..weapon[2]..".png";
 		x		= 0;
 		y		= 0;
 		width	= "100%";
@@ -123,19 +123,26 @@ end
 
 local function UpdateSelection()
   local sel = spGetSelectedUnitsSorted()
-  
   for unitDefID, unitIDs in pairs(sel) do
 	if unitDefID == "n" then
+		Spring.Echo("n")
+		
 		break
 	end
+	
 	selUnitID = unitDefID
-	drawWeapon()
+	
+	local weapon = {}
+	weapon[1] = unitWeapons[selUnitID][1]
+	weapon[2] = unitWeapons[selUnitID][3]
+	Spring.Echo(weapon)
+	
+	drawWeapon(weapon)
  end
 end
 
 local function SetupUnitDef(unitDefID, unitDef)
 	if (not unitDef.weapons) then return end
-  
 	for num, weapon in ipairs(unitDef.weapons) do
 		if (weapon.weaponDef) then
 			local weaponDef = WeaponDefs[weapon.weaponDef]
@@ -160,11 +167,17 @@ function widget:Initialize()
 		return
 	end
 	
-	for unitDefID, unitDef in pairs(UnitDefs) do
+	for unitDefID, unitDef in ipairs(UnitDefs) do
+		Spring.Echo(unitDefID)
 		unitWeapons[unitDefID] = SetupUnitDef(unitDefID, unitDef)
+		Spring.Echo(unitWeapons[unitDefID])
+	end
+	
+	for index, weapons in ipairs(unitWeapons) do
+		Spring.Echo(index)
+		Spring.Echo(weapons)
 	end
 	CreateWindow()
-	--drawWeapon()
 end
 
 function widget:CommandsChanged()
