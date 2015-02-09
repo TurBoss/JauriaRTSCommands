@@ -31,7 +31,7 @@ local function CreateWindow()
 	counterWindow	= Chili.Window:New{
 		parent		= Chili.Screen0;
 		name		= "counter window";
-		x			= "45%";
+		x			= "42%";
 		y			= "90%";
 		width		= "15%";
 		height		= "10%";
@@ -127,10 +127,6 @@ function widget:Initialize()
 	
 	CreateWindow()
 	UpdateCounter()
-end
-
-function widget:Shutdown()
-	widgetHandler:DeregisterGlobal('DeathEvent')
 end
 
 function widget:GameFrame(f)

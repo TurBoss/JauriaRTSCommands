@@ -22,6 +22,7 @@ local unitDef = {
 
 	--Movement
 
+	moveState = 0,
 	mass=600,
 	Acceleration = 2,
 	BrakeRate = 1.5,
@@ -51,10 +52,14 @@ local unitDef = {
 	
 	Builder = true,
 	ShowNanoSpray = false,
-	CanBeAssisted = false, 
+	CanBeAssisted = false,
+	CanReclaim = false,
+	CanRepair = false,
+	CanAssist = false,
+	CanRestore = false,
 	workerTime = 0.50,
-	repairSpeed = 1,
-	reclaimSpeed = 1,
+	--repairSpeed = 1,
+	--reclaimSpeed = 1,
 	buildDistance = 30,
 	
 	buildoptions = {

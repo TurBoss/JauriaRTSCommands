@@ -96,7 +96,7 @@ function createMyButton(cmd, buildid)
 	if(type(cmd) == 'table')then
 		buttontext, container, isState, isBuild, texture = findButtonData(cmd)
 		
-		if not isBuild then
+		if not isBuild and isState then
 			local result = container.xstep % MAXBUTTONSONROW
 			container.xstep = container.xstep + 1
 			local increaseRow = false
@@ -110,11 +110,11 @@ function createMyButton(cmd, buildid)
 			local button = Chili.Button:New {
 				parent = container,
 				--x = math.floor(screenWidth/120) * (result-1),
-				y = math.floor(screenWidth/70) * (container.ystep-1),
+				y = math.floor(screenWidth/100) * (container.ystep-1),
 				padding = {5, 5, 5, 5},
 				margin = {0, 0, 0, 0},
 				width = "100%",
-				height = math.floor(screenWidth/70),
+				height = "25%",--math.floor(screenWidth/70),
 				caption = buttontext,
 				fontSize = math.floor(screenWidth/120);
 				isDisabled = false,
@@ -125,7 +125,35 @@ function createMyButton(cmd, buildid)
 			if(increaseRow)then
 				container.ystep = container.ystep+1
 			end
-		
+		elseif not isBuild and not isState then
+			local result = container.xstep % MAXBUTTONSONROW
+			container.xstep = container.xstep + 1
+			local increaseRow = false
+			if(result==0)then
+				result = MAXBUTTONSONROW
+				increaseRow = true
+			end
+			
+			
+			local color = {0,0,0,1}
+			local button = Chili.Button:New {
+				parent = container,
+				--x = math.floor(screenWidth/120) * (result-1),
+				y = math.floor(screenWidth/100) * (container.ystep-1),
+				padding = {5, 5, 5, 5},
+				margin = {0, 0, 0, 0},
+				width = "100%",
+				height = "7%",--math.floor(screenWidth/70),
+				caption = buttontext,
+				fontSize = math.floor(screenWidth/120);
+				isDisabled = false,
+				cmdid = cmd.id,
+				OnClick = {ClickFunc},
+			}
+			
+			if(increaseRow)then
+				container.ystep = container.ystep+1
+			end
 		elseif isBuild then
 			
 			local tooltip = "Build Unit: " .. UnitDefs[-cmd.id].humanName .. " - " .. UnitDefs[-cmd.id].tooltip .. "\n"
@@ -172,7 +200,7 @@ function createMyButton(cmd, buildid)
 					keepAspect = true,	--isState;
 					file = texture;
 					parent = button;
-				}		
+				}
 			end
 		end
 	end
