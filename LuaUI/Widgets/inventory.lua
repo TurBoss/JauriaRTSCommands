@@ -166,8 +166,8 @@ function widget:Initialize()
 	end
 	
 	for unitDefID, unitDef in ipairs(UnitDefs) do
-		Spring.Echo(unitDefID)
 		unitWeapons[unitDefID] = SetupUnitDef(unitDefID, unitDef)
+		Spring.Echo(unitDefID)
 		Spring.Echo(unitWeapons[unitDefID])
 	end
 	
@@ -179,5 +179,11 @@ function widget:Initialize()
 end
 
 function widget:SelectionChanged(sel)
+	if sel[1] == nil then
+		weaponImage1:Dispose()
+		weaponImage2:Dispose()
+		weaponImage1 = nil
+		weaponImage2 = nil
+	end
 	UpdateSelection()
 end
