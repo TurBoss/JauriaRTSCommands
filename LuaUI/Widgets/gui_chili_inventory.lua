@@ -104,6 +104,7 @@ function drawWeapon(weapon)
 
 	weaponImage1 = Chili.Image:New {
 		parent = inventoryPanel1;
+		tooltip = weapon[1],
 		file = ":cl:luaui/images/weapons/"..weapon[1]..".png";
 		x		= 0;
 		y		= 0;
@@ -113,12 +114,40 @@ function drawWeapon(weapon)
 	
 	weaponImage2 = Chili.Image:New {
 		parent = inventoryPanel2;
+		tooltip = weapon[2],
 		file = ":cl:luaui/images/weapons/"..weapon[2]..".png";
 		x		= 0;
 		y		= 0;
 		width	= "100%";
 		height	= "100%";
 	};
+end
+
+function removePics()
+	if weaponImage1 or weaponImage2 then
+		weaponImage1:Dispose()
+		weaponImage2:Dispose()
+		weaponImage1 = nil
+		weaponImage2 = nil
+	end
+end
+
+local function getWeaponsName(unitDefID)
+	for unitDID, unitDef in ipairs(UnitDefs) do
+		if unitDID == unitDefID then
+			if (not unitDef.weapons) then return end
+			for num, weapon in ipairs(unitDef.weapons) do
+				if (weapon.weaponDef) then
+					local weaponDef = WeaponDefs[weapon.weaponDef]
+					if (weaponDef) then
+						local name = weaponDef.name
+						weaponName[num] = name
+					end
+				end
+			end
+			return weaponName
+		end
+	end
 end
 
 local function UpdateSelection()
@@ -128,31 +157,18 @@ local function UpdateSelection()
 		break
 	end
 	
+	local weapons = getWeaponsName(unitDefID)
+	
 	selUnitID = unitDefID
 	
 	local weapon = {}
-	weapon[1] = unitWeapons[selUnitID][1]
-	weapon[2] = unitWeapons[selUnitID][3]
-	Spring.Echo(weapon)
+	weapon[1] = weapons[1]
+	weapon[2] = weapons[3]
 	
+	removePics()
 	drawWeapon(weapon)
  end
 end
-
-local function SetupUnitDef(unitDefID, unitDef)
-	if (not unitDef.weapons) then return end
-	for num, weapon in ipairs(unitDef.weapons) do
-		if (weapon.weaponDef) then
-			local weaponDef = WeaponDefs[weapon.weaponDef]
-			if (weaponDef) then
-				local name = weaponDef.name
-				weaponName[num] = name
-			end
-		end
-	end
-	return weaponName
-end
-
 --------------------------------------------------------------------------------
 -- callins
 --------------------------------------------------------------------------------
@@ -165,25 +181,13 @@ function widget:Initialize()
 		return
 	end
 	
-	for unitDefID, unitDef in ipairs(UnitDefs) do
-		unitWeapons[unitDefID] = SetupUnitDef(unitDefID, unitDef)
-		Spring.Echo(unitDefID)
-		Spring.Echo(unitWeapons[unitDefID])
-	end
-	
-	for index, weapons in ipairs(unitWeapons) do
-		Spring.Echo(index)
-		Spring.Echo(weapons)
-	end
 	CreateWindow()
 end
 
 function widget:SelectionChanged(sel)
 	if sel[1] == nil then
-		weaponImage1:Dispose()
-		weaponImage2:Dispose()
-		weaponImage1 = nil
-		weaponImage2 = nil
+		removePics()
+	else
+		UpdateSelection(sel)
 	end
-	UpdateSelection()
 end
