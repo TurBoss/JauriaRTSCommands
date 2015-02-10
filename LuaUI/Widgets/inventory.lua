@@ -179,11 +179,5 @@ function widget:Initialize()
 end
 
 function widget:SelectionChanged(sel)
-	Spring.Echo(sel)
 	UpdateSelection()
-end
-
-function widget:GameFrame(f)
-	if (f % 180 ==0) then 
-	end
 end
