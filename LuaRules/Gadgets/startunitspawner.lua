@@ -56,3 +56,7 @@ function gadget:RecvLuaMsg(msg, playerID)
 		--CreateUnit(selectedUnitDefId, playerID)
 	end
 end
+
+function gadget:GameOver()
+	gadgetHandler:RemoveGadget()
+end

@@ -125,8 +125,6 @@ local function UpdateSelection()
   local sel = spGetSelectedUnitsSorted()
   for unitDefID, unitIDs in pairs(sel) do
 	if unitDefID == "n" then
-		Spring.Echo("n")
-		
 		break
 	end
 	
@@ -180,7 +178,8 @@ function widget:Initialize()
 	CreateWindow()
 end
 
-function widget:CommandsChanged()
+function widget:SelectionChanged(sel)
+	Spring.Echo(sel)
 	UpdateSelection()
 end
 
