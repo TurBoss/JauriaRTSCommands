@@ -10,8 +10,19 @@ function gadget:GetInfo()
         enabled = true
     }
 end
-
+local timer = 600
 -- SYNCED only
 if not gadgetHandler:IsSyncedCode() then
 	return
+end
+
+function gadget:GameFrame(f)
+	if (f % 30 ==0) then
+		if timer == 0 then
+			Spring.GameOver()
+		else
+			timer = timer -1
+		end
+		Spring.SetGameRulesParam("GameTimer", timer)
+	end
 end

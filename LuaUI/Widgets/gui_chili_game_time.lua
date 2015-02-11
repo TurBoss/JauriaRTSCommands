@@ -20,6 +20,7 @@ local grey	= {0.5, 0.5, 0.5, 1.0}
 local white	= {1.0, 1.0, 1.0, 1.0}
 local red	= {0.8, 0.0, 0.0, 1.0}
 
+local timer = 0
 
 local timeWindow = {}
 local timePanel, timeLabel
@@ -67,7 +68,7 @@ function UpdateTimer()
 	timerLabel	= Chili.Label:New{
 		parent		= timerPanel;
 		name		= "timer label";
-		caption		= "10:00";
+		caption		= string.format("%.2d:%.2d",  timer/60%60, timer%60);
 		fontsize	= math.floor(screenSizeX/50);
 		padding 	= {0,0,0,0};
 		valign		= 'center';
@@ -92,4 +93,13 @@ function widget:Initialize()
 	
 	CreateWindow()
 	UpdateTimer()
+end
+
+function widget:GameFrame(f)
+	if (f % 30 ==0) then 
+		timer = Spring.GetGameRulesParam("GameTimer")
+		timerLabel:Dispose()
+		timerLabel = nil
+		UpdateTimer()
+	end
 end
