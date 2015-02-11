@@ -74,7 +74,7 @@ function DestroyWindow()
 end
 
 function widget:GamePaused()
-	local _, _, pause = spGetGameSpeed()
+	local pause = select(3, spGetGameSpeed())
 	
 	if not pause then
 		DestroyWindow()

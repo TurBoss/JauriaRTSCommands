@@ -166,7 +166,7 @@ function createMyButton(cmd, buildid)
 				tooltip = tooltip,
 				parent = container,
 				x = 0,
-				y = 0,
+				y = 4,
 				padding = {5, 5, 5, 5},
 				margin = {0, 0, 0, 0},
 				width = "100%";
@@ -318,7 +318,7 @@ function widget:Initialize()
 	
 	window0 = Chili.Window:New{
 		x = "18%",
-		y = "72.3%",
+		bottom = 0,
 		dockable = false,
 		parent = screen0,
 		caption = "Commands",
@@ -334,7 +334,7 @@ function widget:Initialize()
 	}
 	window1 = Chili.Window:New{
 		x = "26%",
-		y = "88.6%",
+		bottom = 0,
 		dockable = false,
 		parent = screen0,
 		caption = "States",
@@ -342,7 +342,7 @@ function widget:Initialize()
 		resizable = false,
 		dragUseGrip = false,
 		width = "8%",
-		height = "11.5%",
+		height = "13%",
 		fontSize = math.floor(screenWidth/100);
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",
@@ -350,7 +350,7 @@ function widget:Initialize()
 	}
 	window2 = Chili.Window:New{
 		x = "34%",
-		y = "88.6%",
+		bottom = 0,
 		dockable = false,
 		parent = screen0,
 		caption = "Item",
@@ -358,7 +358,7 @@ function widget:Initialize()
 		resizable = false,
 		dragUseGrip = false,
 		width = "8%",
-		height = "11.5%",
+		height = "13%",
 		fontSize = math.floor(screenWidth/100);
 		backgroundColor = {0,0,0,1},
 		--skinName  = "DarkGlass",

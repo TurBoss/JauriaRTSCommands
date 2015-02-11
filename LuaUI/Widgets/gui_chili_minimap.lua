@@ -47,6 +47,7 @@ local function MakeMinimapWindow(screenH)
 		name      = "Minimap", 
 		parent    = Chili.Screen0,
 		draggable = false,
+		resizable = false,
 		width     = "18%", 
 		height    = "28%",
 		x         = 0,

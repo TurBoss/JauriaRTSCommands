@@ -33,9 +33,9 @@ local function CreateWindow()
 		parent		= Chili.Screen0;
 		name		= "inventory window";
 		x			= "57%";
-		y			= "88.6%";
+		bottom		= 0,
 		width		= "15%";
-		height		= "11.5%";
+		height		= "13%";
 		dockable	= false;
 		draggable	= false;
 		resizable	= false;
@@ -61,9 +61,9 @@ local function CreateWindow()
 		name		= "primary weapon";
 		padding 	= {10,10,10,10};
 		x			= "5%";
-		y			= "35%";
+		y			= "28%";
 		width		= "40%";
-		height		= "60%";
+		height		= "65%";
 		dockable	= false;
 		draggable	= false;
 		resizable	= false;
@@ -82,9 +82,9 @@ local function CreateWindow()
 		name		= "secondary weapon";
 		padding 	= {10,10,10,10};
 		x			= "55%";
-		y			= "35%";
+		y			= "28%";
 		width		= "40%";
-		height		= "60%";
+		height		= "65%";
 		dockable	= false;
 		draggable	= false;
 		resizable	= false;

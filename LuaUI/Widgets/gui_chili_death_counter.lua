@@ -32,7 +32,7 @@ local function CreateWindow()
 		parent		= Chili.Screen0;
 		name		= "counter window";
 		x			= "42%";
-		y			= "90%";
+		bottom		= 0,
 		width		= "15%";
 		height		= "10%";
 		dockable	= false;
