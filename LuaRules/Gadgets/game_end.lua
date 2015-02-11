@@ -197,7 +197,6 @@ function gadget:GameFrame(frame)
 	
 	if (frame%30) == 0 then
 		local timer = Spring.GetGameRulesParam("GameTimer")
-		Spring.Echo("lol")
 		if timer == 0 then
 			local team = {}
 			local unitDestroyedCounterA = Spring.GetGameRulesParam("unitDestroyedCounterA")
