@@ -2563,13 +2563,13 @@ function widget:Initialize()
 	
 	MakeMenuBar()
 	
-	useUiKeys = settings.config['epic_Settings/Misc_Use_uikeys.txt']
+	--useUiKeys = settings.config['epic_Settings/Misc_Use_uikeys.txt']
 	
-	if not useUiKeys then
-		spSendCommands("unbindall")
-	else
-		echo('You have opted to use the engine\'s uikeys.txt. The menu keybind system will not be used.')
-	end
+	--if not useUiKeys then
+	--	spSendCommands("unbindall")
+	--else
+	--	echo('You have opted to use the engine\'s uikeys.txt. The menu keybind system will not be used.')
+	--end
 	
 	LoadKeybinds()
 	ReApplyKeybinds()
