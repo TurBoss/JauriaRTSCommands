@@ -1,9 +1,9 @@
 --http://springrts.com/wiki/Modinfo.lua
 local modinfo = {
 	name = "Commands Jauria RTS",
-	shortname = "CJRTS",
+	shortname = "JRTSC",
 	game = "Commands Jauria RTS",
-	shortgame = "CJRTS",
+	shortgame = "JRTSC",
 	description = "Jauria RTS Game",
 	url = "http://jauriarts.com",
 	version = "$VERSION",
