@@ -67,6 +67,22 @@ local killedAllyTeams = {}
 --------------------------------------------------------------------------------
 
 
+function destroyAll(team)
+	--Spring.Echo("Destroy")
+	if team == "0" then
+		--Spring.Echo("UNO")
+		team = 1
+	elseif team == "1" then
+		--Spring.Echo("CERO")
+		team = 0
+	end
+	toDestroy = GetTeamUnits(team)
+	--Spring.Echo(toDestroy)
+	for u in pairs(toDestroy) do
+		DestroyUnit(toDestroy[u], true)
+	end
+end
+
 function gadget:GameOver()
 	-- remove ourself after successful game over
 	gadgetHandler:RemoveGadget()
@@ -178,6 +194,23 @@ function gadget:GameFrame(frame)
 			KillAllyTeamsZeroUnits()
 		end
 	end
+	
+	if (frame%30) == 0 then
+		local timer = Spring.GetGameRulesParam("GameTimer")
+		Spring.Echo("lol")
+		if timer == 0 then
+			local team = {}
+			local unitDestroyedCounterA = Spring.GetGameRulesParam("unitDestroyedCounterA")
+			local unitDestroyedCounterB = Spring.GetGameRulesParam("unitDestroyedCounterB")
+			if unitDestroyedCounterA > unitDestroyedCounterB then
+				team[0] = 0
+				GameOver(team)
+			elseif unitDestroyedCounterB > unitDestroyedCounterA then
+				team[0] = 1
+				GameOver(team)
+			end
+		end
+	end
 end
 
 function gadget:TeamDied(teamID)
@@ -245,12 +278,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeamID)
 		-- skip gaia
 		return
 	end
-	-----------------------
-	if unitID == 10500 or 10501 or 10502 or 10503 or 10504 or 10505 then
-		-- skip turrents
-		return
-	end
-	-----------------------
+	
 	local teamUnitCount = teamsUnitCount[unitTeamID]
 	if teamUnitCount then
 		teamUnitCount = teamUnitCount - 1
@@ -268,33 +296,18 @@ function gadget:UnitTaken(unitID, unitDefID, unitTeamID)
 	gadget:UnitDestroyed(unitID, unitDefID, unitTeamID)
 end
 
-function destroyall(team)
-	--Spring.Echo("Destroy")
-	if team == "0" then
-		--Spring.Echo("UNO")
-		team = 1
-	elseif team == "1" then
-		--Spring.Echo("CERO")
-		team = 0
-	end
-	toDestroy = GetTeamUnits(team)
-	--Spring.Echo(toDestroy)
-	for u in pairs(toDestroy) do
-		DestroyUnit(toDestroy[u], true)
-	end
-end
-
 function gadget:RecvLuaMsg(msg)
 	local team = {}
 	if (msg:sub(1,4) == 'quit') then
 		team[0]  = msg:sub(5)
 		Spring.SendLuaUIMsg("gameover" .. team[0])
 		GameOver(team)
-		destroyall(team[0])
+		destroyAll(team[0])
 	elseif (msg:sub(1,6) == 'resign') then
 		team[0] = msg:sub(7)
 		Spring.SendLuaUIMsg("gameover" .. team[0])
 		GameOver(team)
-		destroyall(team[0])
+		destroyAll(team[0])
 	end
 end
+
