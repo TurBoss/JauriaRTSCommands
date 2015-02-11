@@ -1093,7 +1093,7 @@ local function MakeMessageWindow(name, enabled)
 		width = 450
 		x = integralWidth
 		height = integralHeight*0.84
-		bottom = integralHeight*0.84
+		bottom = "11%"
 	else
 		local resourceBarWidth = 430
 		local maxWidth = math.min(screenWidth/2 - resourceBarWidth/2, screenWidth - 400 - resourceBarWidth)
@@ -1128,7 +1128,7 @@ local function MakeMessageWindow(name, enabled)
 		minHeight = MIN_HEIGHT,
 		maxHeight = 500,
 		color = { 0, 0, 0, 0 },
-		OnMouseDown = {
+		--[[OnMouseDown = {
 			function(self) --//click on scroll bar shortcut to "Settings/HUD Panels/Chat/Console".
 				local _,_, meta,_ = Spring.GetModKeyState()
 				if not meta then return false end
@@ -1136,7 +1136,7 @@ local function MakeMessageWindow(name, enabled)
 				WG.crude.ShowMenu() --make epic Chili menu appear.
 				return true
 			end
-		},
+		},--]]
 	}
 end
 

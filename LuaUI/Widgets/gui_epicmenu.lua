@@ -2125,7 +2125,7 @@ local function MakeMenuBar()
 		resizable = false,
 		minimizable = false,
 		backgroundColor = color.main_bg,
-		color = color.main_bg,
+		--color = color.main_bg,
 		margin = {0,0,0,0},
 		padding = {0,0,0,0},
 		parent = screen0,
