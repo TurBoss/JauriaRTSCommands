@@ -18,6 +18,11 @@ local unitDestroyedCounterA = 0
 local unitDestroyedCounterB = 0
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+
+	if unitDefID == UnitDefNames.mine.id then
+		return
+	end
+	
 	if ((attackerTeam == 0) and ( attackerTeam ~= unitTeam)) then
 		unitDestroyedCounterA = unitDestroyedCounterA +1
 	elseif ((attackerTeam == 1) and ( attackerTeam ~= unitTeam)) then
