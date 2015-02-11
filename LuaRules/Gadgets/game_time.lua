@@ -10,7 +10,7 @@ function gadget:GetInfo()
         enabled = true
     }
 end
-local timer = 50 --seconds
+local timer = 600 --seconds
 -- SYNCED only
 if not gadgetHandler:IsSyncedCode() then
 	return
