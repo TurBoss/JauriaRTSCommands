@@ -214,7 +214,7 @@ options = {
 	enableConsole = {
 		name = "Enable the debug console",
 		type = 'bool',
-		value = true,
+		value = false,
 		OnChange = function(self)
 			if window_console then
 				if self.value then

@@ -310,7 +310,7 @@ function widget:AddChatMessage(msg)
 		resizable = false;
 		draggable = false;
 		
-		skinName  = "BubbleBlack";
+		--skinName  = "BubbleBlack";
 		color     = bubbleColor;
 		padding   = {12, 12, 12, 12};
 
