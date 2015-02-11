@@ -332,7 +332,7 @@ local pathMisc = 'Settings/Misc'
 		desc = 'NOT RECOMMENDED! Enable this to use the engine\'s keybind file. This can break existing functionality. Requires restart.',
 		type = 'bool',
 		advanced = true,
-		value = false,
+		value = true,
 	})
 	AddOption(pathMisc,
 	{
