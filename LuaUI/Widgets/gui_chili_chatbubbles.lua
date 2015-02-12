@@ -443,7 +443,7 @@ function widget:AddMapPoint(player, caption, px, py, pz)
 		autosize  = true;
 		resizable = false;
 		--draggable = false;
-		skinName  = "BubbleBlack";
+		--skinName  = "BubbleBlack";
 		color     = {1,0.2,0.2,1};
 		padding   = {12, 12, 12, 12};
 
@@ -509,7 +509,7 @@ function widget:AddWarning(text)
 		height    = options.window_height.value;
 		resizable = false;
 		draggable = false;
-		skinName  = "BubbleBlack";
+		--skinName  = "BubbleBlack";
 		color     = teamcolor;
 		padding   = {12, 12, 12, 12};
 
