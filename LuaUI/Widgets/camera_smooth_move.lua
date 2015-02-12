@@ -36,8 +36,6 @@ local glColor     = gl.Color
 local glLineWidth = gl.LineWidth
 local glPointSize = gl.PointSize
 local glVertex    = gl.Vertex
-local glTexture	  = gl.Texture
-local glTexRect	  = gl.TexRect
 
 local spGetCameraState   = Spring.GetCameraState
 local spGetCameraVectors = Spring.GetCameraVectors
@@ -74,8 +72,6 @@ local speedFactor = 25
 
 local mx, my
 local active = false
-
-local icon_size = 20
 
 
 --------------------------------------------------------------------------------
@@ -212,9 +208,9 @@ end
 
 
 local function DrawPoint(x, y, c, s)
-  --glPointSize(s)
+  glPointSize(s)
   glColor(c)
-  --glBeginEnd(GL_POINTS, glVertex, x, y)
+  glBeginEnd(GL_POINTS, glVertex, x, y)
 end
 
 
@@ -245,11 +241,7 @@ function widget:DrawScreen()
 
     DrawPoint(x, y, { 0, 1, 0 },  5)
 
-	glTexture(LUAUI_DIRNAME .. 'Images/ccc/arrows-dot.png')
-	glTexRect(x-icon_size, y-icon_size, x+icon_size, y+icon_size)
-	glTexture(false)
-    --glPointSize(1)
-    glColor(1,1,1,1)
+    glPointSize(1)
   end
 end
 
