@@ -14,6 +14,9 @@ local wheel_speed = math.rad(180)
 local SIG_AIM1 = 1
 local SIG_AIM2 = 2
 
+
+local shells = SFX.CEG
+
 function script.Create()
 	Spin(cristal, z_axis, wheel_speed)
 end
@@ -21,7 +24,7 @@ end
 ---AIMING & SHOOTING---
 
 function script.Shot(num)
-	--Spring.Echo(num)
+	EmitSfx(flare, shells)
 end
 
 function script.AimFromWeapon()

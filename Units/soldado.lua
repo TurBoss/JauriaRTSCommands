@@ -44,8 +44,13 @@ local unitDef = {
 	CanPatrol = true,
 	CanStop = true,
 	LeaveTracks = false,
-	noAutoFire = true, 
-
+	noAutoFire = true,
+	
+	sfxtypes = {
+		explosiongenerators = {
+			"custom:DEVA_SHELLS",
+		},
+	},
 
 	weapons = {
 		[1]={name  = "metralleta",
