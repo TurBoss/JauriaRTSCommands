@@ -6,7 +6,7 @@ local modinfo = {
 	shortgame = "JRTSC",
 	description = "Jauria RTS Game",
 	url = "http://jauriarts.com",
-	version = "$VERSION2",
+	version = "$VERSION",
 	modtype = 1,
 	depend = {
 		"cursors.sdz",

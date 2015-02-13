@@ -68,10 +68,10 @@ local function CreateWindow()
 		draggable	= false;
 		resizable	= false;
 		children	= {
-			Chili.Label:New{
-				caption	= "A";
-				y		= "30%";
-				x		= "70%";
+			Chili.TextBox:New{
+				text	= "A";
+				y		= "60%";
+				x		= "60%";
 				fontsize = math.floor(screenSizeX/75);
 			},
 		};
@@ -89,10 +89,10 @@ local function CreateWindow()
 		draggable	= false;
 		resizable	= false;
 		children	= {
-			Chili.Label:New{
-				caption	= "D";
-				y		= "30%";
-				x		= "70%";
+			Chili.TextBox:New{
+				text	= "D";
+				y		= "60%";
+				x		= "60%";
 				fontsize = math.floor(screenSizeX/75);
 			},
 		};
