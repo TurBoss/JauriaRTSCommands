@@ -344,7 +344,6 @@ local function blockMove(num)
 		Signal(SIG_RESTORE)
 		SetSignalMask(SIG_RESTORE)
 		Sleep(900)
-		Spring.Echo("YA!!")
 		Spring.MoveCtrl.Disable(unitID)
 	elseif num == 2 then
 		Signal(SIG_RESTORE)

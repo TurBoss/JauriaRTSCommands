@@ -20,7 +20,7 @@ return {
         numparticles       = 1,
         particlelife       = 30,
         particlelifespread = 0,
-        particlesize       = 2.5,
+        particlesize       = 1.0,
         particlesizespread = 0,
         particlespeed      = 4,
         particlespeedspread = 0,
