@@ -244,7 +244,7 @@ local function SetupUnitDef(unitDefID, unitDef)
       local weaponDef = WeaponDefs[weapon.weaponDef]
       if (weaponDef) then
 		local aoe = weaponDef.damageAreaOfEffect
-        if (num == 3 and unitDef.canManualFire) then
+        if (num == 2 and unitDef.canManualFire) then
           dgunInfo[unitDefID] = getWeaponInfo(weaponDef, unitDef)
         elseif (not weaponDef.isShield 
                 and not ToBool(weaponDef.interceptor) and not ToBool(weaponDef.customParams.hidden)

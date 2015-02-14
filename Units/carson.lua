@@ -5,7 +5,7 @@ local unitDef = {
 	Description = "Complex, mobile unit.",
 	objectName = "carson.dae",
 	script = "carson.lua",
-	buildPic = "placeholder.png",
+	buildPic = "carson.png",
 	--iconType = "rk2",
 
 	--cost
@@ -59,7 +59,7 @@ local unitDef = {
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		[3]={name  = "carson2",
+		[2]={name  = "carson2",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],

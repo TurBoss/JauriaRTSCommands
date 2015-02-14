@@ -161,12 +161,9 @@ local function UpdateSelection()
 	
 	selUnitID = unitDefID
 	
-	local weapon = {}
-	weapon[1] = weapons[1]
-	weapon[2] = weapons[3]
 	
 	removePics()
-	drawWeapon(weapon)
+	drawWeapon(weapons)
  end
 end
 --------------------------------------------------------------------------------

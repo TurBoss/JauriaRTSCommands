@@ -58,7 +58,7 @@ local unitDef = {
 		[1]={name  = "pistola",
 			onlyTargetCategory = [[LAND]],
 		},
-		[3]={name  = "lanzamisiles",
+		[2]={name  = "lanzamisiles",
 			onlyTargetCategory = [[LAND]],
 		},
 	},
