@@ -10,31 +10,31 @@ local unitDef = {
 
 	--cost
 
-	buildCostMetal = 85,
+	buildCostMetal = 0,
 	buildCostEnergy = 0,
-	buildTime = 4.25,
+	buildTime = 0,
 
 	--Health
 
-	maxDamage = 980,
-	idleAutoHeal = 14,
-	idleTime     = 3,
+	maxDamage = 10000,
+	idleAutoHeal = 0,
+	idleTime     = 0,
 
 	--Movement
 
 	moveState = 0,
-	mass=600,
-	Acceleration = 2,
-	BrakeRate = 1.5,
-	FootprintX = 1.5,
-	FootprintZ = 1.5,
+	mass=450,
+	Acceleration = 0.15,
+	BrakeRate = 0.08,
+	FootprintX = 1,
+	FootprintZ = 1,
 	MaxSlope = 12,
-	MaxVelocity = 1,
+	MaxVelocity = 1.2,
 	MaxWaterDepth = 20,
-	MovementClass = "Default2x2",
+	MovementClass = "Default1x1",
 	TurnRate = 1000,
 
-	sightDistance = 340,
+	sightDistance = 2000,
 
 	CanCloak = true,
 	MinCloakDistance = 150,

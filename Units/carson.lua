@@ -1,11 +1,11 @@
-local unitName = "franco"
+local unitName = "carson"
 
 local unitDef = {
-	name = "franco",
+	name = "carson",
 	Description = "Complex, mobile unit.",
-	objectName = "franco.dae",
-	script = "franco.lua",
-	buildPic = "franco.png",
+	objectName = "carson.dae",
+	script = "carson.lua",
+	buildPic = "placeholder.png",
 	--iconType = "rk2",
 
 	--cost
@@ -21,18 +21,18 @@ local unitDef = {
 	idleTime     = 0,
 
 	--Movement
-
+	
 	moveState = 0,
-	mass=500,
-	Acceleration = 0.15,
-	BrakeRate = 0.04,
+	mass=550,
+	Acceleration = 0.2,
+	BrakeRate = 0.03,
 	FootprintX = 1,
 	FootprintZ = 1,
 	MaxSlope = 12,
-	MaxVelocity = 1,
+	MaxVelocity = 1.4,
 	MaxWaterDepth = 20,
 	MovementClass = "Default1x1",
-	TurnRate = 800,
+	TurnRate = 900,
 
 	sightDistance = 2000,
 
@@ -44,16 +44,22 @@ local unitDef = {
 	CanPatrol = true,
 	CanStop = true,
 	LeaveTracks = false,
-	UpRight = true,
+
+	sfxtypes = {
+		explosiongenerators = {
+			"custom:WARMUZZLE",
+			"custom:DEVA_SHELLS",
+		},
+	}, 
 
 
 	weapons = {
-		[1]={name  = "pistola",
+		[1]={name  = "carson1",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		[3]={name  = "riflefranco",
+		[3]={name  = "carson2",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],

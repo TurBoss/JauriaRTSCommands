@@ -1,37 +1,38 @@
 
-local weaponName = "pistola"
+local weaponName = "carson1"
 
 local weaponDef = {
 	
-	name                    = "Pistola",
+	name                    = "Burst",
 	weaponType              = "LaserCannon",
 	
-	Accuracy=10,
-	movingAccuracy=30,
+	Accuracy=100,
+	movingAccuracy=150,
 	
 	--damage
 	
 	avoidFeature = false,
 	
 	damage = {
-		default = 2000,
+		default = 500,
 	},
 --	areaOfEffect            = 10,
 	
 	--physics
 	
-	weaponVelocity          = 800,
-	reloadtime              = 10,
-	range                   = 220,
---	sprayAngle              = 45,
-	weaponaceleration       = 450,
+	
+	weaponVelocity          = 880,
+	reloadtime              = 5,
+	range                   = 500,
+	sprayAngle              = 100,
+	weaponaceleration       = 860,
 	tolerance               = 3000,
 	lineOfSight             = true,
 	turret                  = true,
-	craterMult              = 100,
---	burst                   = 2,
---	burstrate               = 0.08,
-	--proyectiles             = 2,
+	craterMult              = 0,
+	burst                   = 10,
+	burstrate               = 0.1,
+	proyectiles             = 1,
 	
 	--apperance
 	
@@ -42,6 +43,7 @@ local weaponDef = {
 	--stages                  = 0,
 	intensity               = 1,
 	--separation              = 0,
+	
 	--sounds
 	
 	soundStart              = "laser_gfx",

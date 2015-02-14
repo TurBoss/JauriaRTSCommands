@@ -11,14 +11,14 @@ function widget:GetInfo()
 end
 
 
-local artillero		= UnitDefNames.artillero
+local carson		= UnitDefNames.carson
 local franco		= UnitDefNames.franco
 local asesino		= UnitDefNames.asesino
 local soldado		= UnitDefNames.soldado
 local heikthief		= UnitDefNames.heikthief
 
 local units = {
-	artillero,
+	carson,
 	franco,
 	asesino,
 	soldado,

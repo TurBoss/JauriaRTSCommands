@@ -109,7 +109,13 @@ if (resources == nil) then
 				muzzleside				=	'muzzleside.tga',
 				muzzlefront				=	'muzzlefront.tga',
 				largebeam				=	'largelaserfalloff.tga',
+				
 				shell					=	'pd/shell.tga',
+				flowerflash				=	'pd/flowerflash.tga',
+				plasma					=	'gpl/plasma.tga',
+				plasma0029				=	'other/plasma0029.tga',
+				plasma2					=	'gpl/plasma.tga',
+				smokesmall				=	'pd/smokesmall.tga',
 			},
 		}
 	}

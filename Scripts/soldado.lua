@@ -9,7 +9,7 @@ local cristal = piece "cristal"
 local arma = piece "arma"
 local flare = piece "flare"
 
-local wheel_speed = math.rad(180)
+local wheel_speed = math.rad(250)
 
 local SIG_AIM1 = 1
 local SIG_AIM2 = 2
