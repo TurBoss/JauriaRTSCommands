@@ -31,7 +31,7 @@ local weaponDef={
 	commandfire = true,
 	----APPEARANCE
 	
-	model="misil.dae",
+	model="granade.dae",
 	--smokeTrail=true,
 	explosionGenerator="custom:genericshellexplosion-small-lightning",
 	--CegTag="light1",
