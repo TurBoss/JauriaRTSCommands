@@ -53,13 +53,11 @@ local unitDef = {
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		[3]={name  = "riflefranco",
+		[2]={name  = "riflefranco",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		--[2]={name  = "shieldheik",
-		--},
 	},
 }
 

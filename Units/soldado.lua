@@ -56,7 +56,7 @@ local unitDef = {
 		[1]={name  = "metralleta",
 			onlyTargetCategory = [[LAND]],
 		},
-		[3]={name  = "granada",
+		[3]={name  = "shootgun",
 			onlyTargetCategory = [[LAND]],
 		},
 		--[2]={name  = "shieldheik",

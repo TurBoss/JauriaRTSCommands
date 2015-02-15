@@ -344,7 +344,6 @@ local function blockMove(num)
 		Signal(SIG_RESTORE)
 		SetSignalMask(SIG_RESTORE)
 		Sleep(900)
-		Spring.Echo("YA!!")
 		Spring.MoveCtrl.Disable(unitID)
 	elseif num == 2 then
 		Signal(SIG_RESTORE)
@@ -398,7 +397,7 @@ function script.AimWeapon(num, heading, pitch )
 		--wait until the weapon is pointed in the right direction
 		WaitForTurn (torso, z_axis)
 		return true
-	elseif num == 3 then
+	elseif num == 2 then
 		Signal(SIG_AIM1)
 		SetSignalMask(SIG_AIM1)
 		
@@ -418,7 +417,7 @@ end
 function script.FireWeapon1()
 end
 
-function script.FireWeapon3()
+function script.FireWeapon2()
 end
 
             

@@ -277,11 +277,11 @@ local HUDSkinPath = 'Settings/HUD Panels/HUD Skin'
 			WG.crude.SetSkin( self.value );
 		end,
 		items = {
-			{ key = 'Carbon', name = 'Carbon', },
+			--{ key = 'Carbon', name = 'Carbon', },
 			{ key = 'Robocracy', name = 'Robocracy', },
-			{ key = 'DarkHive', name = 'DarkHive', },
-			{ key = 'DarkHiveSquare', name = 'DarkHive (square)', },
-			{ key = 'Twilight', name = 'Twilight', },
+			--{ key = 'DarkHive', name = 'DarkHive', },
+			--{ key = 'DarkHiveSquare', name = 'DarkHive (square)', },
+			--{ key = 'Twilight', name = 'Twilight', },
 		},
 	})
 	ShButton(HUDSkinPath, 'Reload LuaUI', 'luaui reload', 'Reloads the entire UI. NOTE: This button will not work. You must bind a hotkey to this command and use the hotkey.')

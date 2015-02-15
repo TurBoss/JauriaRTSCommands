@@ -72,7 +72,7 @@ local unitDef = {
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		[3]={name  = "dguntest",
+		[2]={name  = "dguntest",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],

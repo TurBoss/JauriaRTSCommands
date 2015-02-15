@@ -407,7 +407,7 @@ function script.AimWeapon(num, heading, pitch )
 		--wait until the weapon is pointed in the right direction
 		WaitForTurn (torso, z_axis)
 		return true
-	elseif num == 3 then
+	elseif num == 2 then
 		Signal(SIG_AIM2)
 		SetSignalMask(SIG_AIM2)
 
