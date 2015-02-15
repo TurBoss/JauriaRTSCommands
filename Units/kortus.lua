@@ -23,16 +23,16 @@ local unitDef = {
 	--Movement
 	
 	moveState = 0,
-	mass=550,
-	Acceleration = 0.2,
-	BrakeRate = 0.03,
+	mass=5000,
+	Acceleration = 0.4,
+	BrakeRate = 0.05,
 	FootprintX = 1,
 	FootprintZ = 1,
 	MaxSlope = 12,
-	MaxVelocity = 1.4,
+	MaxVelocity = 1.6,
 	MaxWaterDepth = 20,
 	MovementClass = "Default1x1",
-	TurnRate = 900,
+	TurnRate = 1000,
 
 	sightDistance = 2000,
 
@@ -54,12 +54,12 @@ local unitDef = {
 
 
 	weapons = {
-		[1]={name  = "carson1",
+		[1]={name  = "kortus1",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		[3]={name  = "carson2",
+		[2]={name  = "kortus2",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],

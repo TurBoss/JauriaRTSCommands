@@ -10,7 +10,7 @@ function widget:GetInfo()
 	}
 end
 
-
+local kortus		= UnitDefNames.kortus
 local carson		= UnitDefNames.carson
 local franco		= UnitDefNames.franco
 local asesino		= UnitDefNames.asesino
@@ -23,6 +23,7 @@ local units = {
 	asesino,
 	soldado,
 	heikthief,
+	kortus,
 }
 
 local selected = {

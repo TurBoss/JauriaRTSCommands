@@ -1,14 +1,15 @@
 
-local weaponName = "shootgun"
+local weaponName = "kortus1"
 
 local weaponDef = {
 	
-	name                    = "shootgun",
+	name                    = "Shootgun1",
 	weaponType              = "LaserCannon",
 	
 	Accuracy=100,
 	movingAccuracy=150,
 	areaOfEffect = 32,
+	
 	--damage
 	
 	avoidFeature = false,
@@ -16,36 +17,37 @@ local weaponDef = {
 	damage = {
 		default = 200,
 	},
---	areaOfEffect            = 10,
 	
 	--physics
 	
-	commandfire = true,
+	--commandfire = true,
 	
-	weaponVelocity          = 880,
-	reloadtime              = 10,
-	range                   = 500,
-	sprayAngle              = 1500,
+	weaponVelocity          = 780,
+	reloadtime              = 3,
+	range                   = 1000,
+	sprayAngle              = 500,
 	weaponaceleration       = 860,
 	tolerance               = 3000,
 	lineOfSight             = true,
 	turret                  = true,
 	craterMult              = 0,
-	burst                   = 6,
-	burstrate               = 0.001,
-	proyectiles             = 3,
-	
+	burst                   = 2,
+	burstrate               = 0.03,
+	projectiles             = 8,
 	--apperance
 	
 	duration                = 0.005,
 	thickness               = 0.8,
-	rgbColor                = [[1 1 0]],
-	--size                    = 0,
+	rgbColor                = [[1 0 0]],
+	rgbColor2               = [[1 1 0]],
+	size                    = 2.5,
 	--stages                  = 0,
 	intensity               = 1,
-	--separation              = 0,
+	--separation              = 10,
 	
 	--sounds
+	
+	--soundTrigger            = true,
 	
 	--soundStart              = "laser_gfx",
 	
