@@ -33,12 +33,20 @@ local Sounds = {
 
 		--WEAPONS
 		
+		siren = { 
+			file = "sounds/siren.ogg",
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
 		mine1 = { 
 			file = "sounds/sboom.ogg",
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		carson1 = { 
@@ -46,8 +54,8 @@ local Sounds = {
 			gain = 2.0,
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		carson2 = { 
@@ -55,8 +63,8 @@ local Sounds = {
 			gain = 0.7,
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 20, ---how many maximum can we hear?
 		},
 		kortus1 ={ 
@@ -64,8 +72,8 @@ local Sounds = {
 			rolloff=3,
 			gain = 0.5,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		kortus2 ={ 
@@ -73,8 +81,8 @@ local Sounds = {
 			gain = 0.6,
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		kortus3 ={ 
@@ -82,32 +90,32 @@ local Sounds = {
 			gain = 0.5,
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		erzeus1 ={ 
 			file = "sounds/Sniper.ogg", 
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		erzeus2 ={ 
 			file = "sounds/SniperRifle.ogg", 
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		stirek1 ={ 
 			file = "sounds/Laser.ogg", 
 			rolloff=3,
 			dopplerscale = 0,
-			maxdist = 6000,
-			priority = 10, --- higher numbers = less chance of cutoff
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
 			maxconcurrent = 5, ---how many maximum can we hear?
 		},
 		default = {
