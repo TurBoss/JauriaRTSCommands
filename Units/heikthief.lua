@@ -65,7 +65,14 @@ local unitDef = {
 	buildoptions = {
 		"mine",
 	},
-
+	
+	sfxtypes = {
+		explosiongenerators = {
+			[[custom:emg_shells_l]],
+			[[custom:flashmuzzle1]],
+		},
+	},
+	
 	weapons = {
 		[1]={name  = "metralleta",
 			onlyTargetCategory = [[LAND]],

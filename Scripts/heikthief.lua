@@ -18,6 +18,7 @@ local pipa001 = piece('pipa001');
 local root = piece('root');
 local torso = piece('torso');
 local flare = piece('flare');
+local flare2 = piece('flare2');
 
 --------------------------------------------------------------------------------
 -- constants
@@ -33,6 +34,8 @@ local SIG_RC = 32
 local RESTORE_DELAY_SHOOT = 1500
 local DELAY_SHOOT = 520
 
+local shells = SFX.CEG
+local muzzle = SFX.CEG + 1
 --------------------------------------------------------------------------------
 -- vars
 --------------------------------------------------------------------------------
@@ -439,7 +442,8 @@ end
 ---AIMING & SHOOTING---
 
 function script.Shot(num)
-	--Spring.Echo(num)
+	EmitSfx(flare, muzzle)
+	EmitSfx(flare2, shells)
 end
 
 function script.AimFromWeapon()
