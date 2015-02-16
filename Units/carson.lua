@@ -1,12 +1,12 @@
 local unitName = "carson"
 
 local unitDef = {
-	name = "Carson",
-	Description = "Complex, mobile unit.",
-	objectName = "carson.dae",
-	script = "carson.lua",
-	buildPic = "carson.png",
-	--iconType = "rk2",
+	name			= "Carson",
+	Description		= "Complex, mobile unit.",
+	objectName		= "carson.dae",
+	script			= "carson.lua",
+	buildPic		= "carson.png",
+	--iconType		= "rk2",
 
 	--cost
 
@@ -23,7 +23,7 @@ local unitDef = {
 	--Movement
 	
 	moveState = 0,
-	mass=550,
+	mass=5000,
 	Acceleration = 0.2,
 	BrakeRate = 0.03,
 	FootprintX = 1,

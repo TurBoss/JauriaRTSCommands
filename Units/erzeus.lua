@@ -1,12 +1,12 @@
 local unitName = "erzeus"
 
 local unitDef = {
-	name = "Erzeus",
-	Description = "Complex, mobile unit.",
-	objectName = "erzeus.dae",
-	script = "erzeus.lua",
-	buildPic = "erzeus.png",
-	--iconType = "rk2",
+	name			= "Erzeus",
+	Description		= "Complex, mobile unit.",
+	objectName		= "erzeus.dae",
+	script			= "erzeus.lua",
+	buildPic		= "erzeus.png",
+	--iconType		= "rk2",
 
 	--cost
 
@@ -23,7 +23,7 @@ local unitDef = {
 	--Movement
 
 	moveState = 0,
-	mass=500,
+	mass=5000,
 	Acceleration = 0.15,
 	BrakeRate = 0.04,
 	FootprintX = 1,
