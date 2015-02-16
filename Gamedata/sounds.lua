@@ -49,6 +49,46 @@ local Sounds = {
 			priority = 10, --- higher numbers = less chance of cutoff
 			maxconcurrent = 2, ---how many maximum can we hear?
 		},
+		kortus1 ={ 
+			file = "sounds/Shootgunbig.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
+		kortus2 ={ 
+			file = "sounds/Shootgun2.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
+		Erzeus1 ={ 
+			file = "sounds/Sniper.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
+		Erzeus2 ={ 
+			file = "sounds/SniperRifle.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
+		Stirek1 ={ 
+			file = "sounds/Laser.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
 	},
 }
 
