@@ -45,7 +45,12 @@ local unitDef = {
 	CanStop = true,
 	LeaveTracks = false,
 	UpRight = true,
-
+	
+	sfxtypes = {
+		explosiongenerators = {
+			[[custom:WEAPEXP_PUFF]],
+		},
+	},
 
 	weapons = {
 		[1]={name  = "pistola",

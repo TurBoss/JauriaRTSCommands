@@ -40,6 +40,7 @@ local SIG_RESTORE = 16
 local RESTORE_DELAY_SHOOT = 1500
 local DELAY_SHOOT = 520
 
+local smoke = SFX.CEG
 --------------------------------------------------------------------------------
 -- vars
 --------------------------------------------------------------------------------
@@ -899,10 +900,9 @@ function script.AimWeapon(num, heading, pitch )
 end
 
 --called after the weapon has fired
-function script.FireWeapon1()
-end
-
-function script.FireWeapon3()
+function script.FireWeapon()
+	
+	EmitSfx(flare, smoke)
 end
 
 

@@ -45,10 +45,10 @@ local unitDef = {
 	CanStop = true,
 	LeaveTracks = false,
 
-	sfxtypes = {
+	 sfxtypes = {
 		explosiongenerators = {
-			"custom:WARMUZZLE",
-			"custom:DEVA_SHELLS",
+			[[custom:RIOT_SHELL_S]],
+			[[custom:HEAVY_CANNON_MUZZLE]],
 		},
 	}, 
 

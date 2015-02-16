@@ -116,6 +116,8 @@ if (resources == nil) then
 				plasma0029				=	'other/plasma0029.tga',
 				plasma2					=	'gpl/plasma.tga',
 				smokesmall				=	'pd/smokesmall.tga',
+				exp00_5					=	"gpl/explosion2/exp00_5.tga",
+				orangesmoke3			=	"gpl/smoke_orange.png",
 			},
 		}
 	}

@@ -30,7 +30,7 @@ local SIG_RESTORE = 32
 local DELAY_SHOOT = 520
 
 local shells = SFX.CEG
-local warmuzzle = SFX.CEG + 1
+local cannonmuzzle = SFX.CEG + 1
 
 local isMoving, isShooting, aimWeapon = false, false, false
 
@@ -298,8 +298,6 @@ end
 ---AIMING & SHOOTING---
 
 function script.Shot(num)
-	--EmitSfx(flare2, warmuzzle)
-	--EmitSfx(flare, shells)
 end
 
 function script.AimFromWeapon()
@@ -336,10 +334,10 @@ function script.AimWeapon(num, heading, pitch )
 end
 
 --called after the weapon has fired
-function script.FireWeapon1()
+function script.FireWeapon()
+	EmitSfx(flare1, cannonmuzzle)
+	EmitSfx(flare2, shells)
 end
 
-function script.FireWeapon2()
-end
 
             

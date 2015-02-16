@@ -414,10 +414,7 @@ function script.AimWeapon(num, heading, pitch )
 end
 
 --called after the weapon has fired
-function script.FireWeapon1()
-end
-
-function script.FireWeapon2()
+function script.FireWeapon()
 end
 
             
