@@ -61,8 +61,8 @@ local weaponDef={
 
 	--sound
 	
-	soundHit="boom_gfx",
-	soundStart = "shoot_gfx",
+	soundStart		=	"kortus2",
+	soundHit		=	"kortus3",
 }
 
 return lowerkeys ({[weaponName]=weaponDef})

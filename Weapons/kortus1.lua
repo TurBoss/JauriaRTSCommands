@@ -47,9 +47,9 @@ local weaponDef = {
 	
 	--sounds
 	
-	--soundTrigger            = true,
 	
-	--soundStart              = "laser_gfx",
+	soundStart              = "kortus1",
+	soundTrigger            = true,
 	
 	collideFriendly=true,
 	noSelfDamage= false,

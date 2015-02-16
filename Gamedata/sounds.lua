@@ -32,116 +32,79 @@ local Sounds = {
 		--- END RESERVED
 
 		--WEAPONS
-
-		disparo_gfx = { 
-			file = "sounds/8bit_gunloop_explosion.wav", 
+		
+		mine1 = { 
+			file = "sounds/sboom.ogg", 
 			rolloff=3,
 			dopplerscale = 0,
 			maxdist = 6000,
 			priority = 10, --- higher numbers = less chance of cutoff
 			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		laser_gfx = {
-			file = "sounds/ric1.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		carson1 = { 
+			file = "sounds/Gun2.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		metralleta_gfx = {
-			file = "sounds/ric2.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		carson2 = { 
+			file = "sounds/M4Shoot.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		misil_gfx = {
-			file = "sounds/rocket1.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		kortus1 ={ 
+			file = "sounds/Shootgunbig.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		boom_gfx = {
-			file = "sounds/sboom.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		kortus2 ={ 
+			file = "sounds/Shootgun2.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		plasma_gfx = {
-			file = "sounds/sgun1.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		kortus3 ={ 
+			file = "sounds/Stun.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		shoot_gfx = {
-			file = "sounds/stndr2.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		erzeus1 ={ 
+			file = "sounds/Sniper.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		shoot2_gfx = {
-			file = "sounds/shoot.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		erzeus2 ={ 
+			file = "sounds/SniperRifle.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		melee_gfx = {
-			file = "sounds/armor1.ogg",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
+		stirek1 ={ 
+			file = "sounds/Laser.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		
-		flame_gfx = {
-			file = "sounds/out1.ogg",
-			gain = 0.5,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
-		},
-		
-		--[[DefaultsForSounds = { -- this are default settings
-			file = "ThisEntryMustBePresent.wav",
-			gain = 1.0,
-			pitch = 1.0,
-			priority = 0,
-			maxconcurrent = 16, --- some reasonable limits
-			--maxdist = FLT_MAX, --- no cutoff at all
-		},
-		--- EXAMPLE ONLY!
-		MyAwesomeSound = {			
-			file = "sounds/booooom.wav",
-			preload, -- put in memory!
-			loop,  -- loop me!
-			looptime=1000, --- milliseconds!
-			gain = 2.0, --- for uber-loudness
-			pitch = 0.2, --- bass-test
-			priority = 15, --- very high
-			maxconcurrent = 1, ---only once
-			--maxdist = 500, --- only when near
-		},]]--
 	},
 }
 
