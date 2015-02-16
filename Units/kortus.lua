@@ -1,11 +1,11 @@
 local unitName = "kortus"
 
 local unitDef = {
-	name = "kortus",
+	name = "Kortus",
 	Description = "Complex, mobile unit.",
 	objectName = "kortus.dae",
 	script = "kortus.lua",
-	buildPic = "placeholder.png",
+	buildPic = "kortus.png",
 	--iconType = "rk2",
 
 	--cost

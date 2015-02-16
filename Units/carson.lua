@@ -1,7 +1,7 @@
 local unitName = "carson"
 
 local unitDef = {
-	name = "carson",
+	name = "Carson",
 	Description = "Complex, mobile unit.",
 	objectName = "carson.dae",
 	script = "carson.lua",

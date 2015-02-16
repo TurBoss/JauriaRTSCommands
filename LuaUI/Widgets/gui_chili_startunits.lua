@@ -10,21 +10,7 @@ function widget:GetInfo()
 	}
 end
 
-local kortus		= UnitDefNames.kortus
-local carson		= UnitDefNames.carson
-local franco		= UnitDefNames.franco
-local asesino		= UnitDefNames.asesino
-local soldado		= UnitDefNames.soldado
-local heikthief		= UnitDefNames.heikthief
-
-local units = {
-	carson,
-	franco,
-	asesino,
-	soldado,
-	heikthief,
-	kortus,
-}
+local units = VFS.Include("LuaUI/Configs/ActiveUnits.lua",nil)
 
 local selected = {
 }

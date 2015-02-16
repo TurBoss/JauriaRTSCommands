@@ -16,7 +16,7 @@ local unitDef = {
 
 	--Health
 
-	HideDamage		= 1,
+	HideDamage		= true,
 	maxDamage		= 250000,
 	idleAutoHeal	= 1000,
 	idleTime		= 0,
