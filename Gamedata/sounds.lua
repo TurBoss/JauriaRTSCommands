@@ -32,7 +32,15 @@ local Sounds = {
 		--- END RESERVED
 
 		--WEAPONS
-
+		
+		mine1 = { 
+			file = "sounds/sboom.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
 		carson1 = { 
 			file = "sounds/Gun2.ogg", 
 			rolloff=3,
@@ -65,7 +73,15 @@ local Sounds = {
 			priority = 10, --- higher numbers = less chance of cutoff
 			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		Erzeus1 ={ 
+		kortus3 ={ 
+			file = "sounds/Stun.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 6000,
+			priority = 10, --- higher numbers = less chance of cutoff
+			maxconcurrent = 2, ---how many maximum can we hear?
+		},
+		erzeus1 ={ 
 			file = "sounds/Sniper.ogg", 
 			rolloff=3,
 			dopplerscale = 0,
@@ -73,7 +89,7 @@ local Sounds = {
 			priority = 10, --- higher numbers = less chance of cutoff
 			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		Erzeus2 ={ 
+		erzeus2 ={ 
 			file = "sounds/SniperRifle.ogg", 
 			rolloff=3,
 			dopplerscale = 0,
@@ -81,7 +97,7 @@ local Sounds = {
 			priority = 10, --- higher numbers = less chance of cutoff
 			maxconcurrent = 2, ---how many maximum can we hear?
 		},
-		Stirek1 ={ 
+		stirek1 ={ 
 			file = "sounds/Laser.ogg", 
 			rolloff=3,
 			dopplerscale = 0,

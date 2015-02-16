@@ -1,13 +1,13 @@
 
 local kortus		= UnitDefNames.kortus
 local carson		= UnitDefNames.carson
-local franco		= UnitDefNames.franco
-local heikthief		= UnitDefNames.heikthief
+local erzeus		= UnitDefNames.erzeus
+local stirek		= UnitDefNames.stirek
 
 local units = {
 	carson,
-	franco,
-	heikthief,
+	erzeus,
+	stirek,
 	kortus,
 }
 

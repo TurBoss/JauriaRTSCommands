@@ -46,7 +46,7 @@ local weaponDef = {
 	
 	--sounds
 	
-	soundStart              = "laser_gfx",
+	soundStart              = "carson1",
 	
 	collideFriendly=true,
 	noSelfDamage= false,
