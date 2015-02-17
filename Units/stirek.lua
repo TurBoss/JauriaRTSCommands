@@ -23,7 +23,7 @@ local unitDef = {
 	--Movement
 
 	moveState = 0,
-	mass=450,
+	mass=5000,
 	Acceleration = 0.15,
 	BrakeRate = 0.08,
 	FootprintX = 1,
@@ -41,7 +41,7 @@ local unitDef = {
 	InitCloaked = true,
 	
 	Category = [[LAND]],
-	CanManualFire = true, 
+	--CanManualFire = true, 
 	CanAttack = true,
 	CanGuard = true,
 	CanMove = true,
