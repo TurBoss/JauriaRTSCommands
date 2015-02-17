@@ -36,17 +36,25 @@ end
 function script.Shot(num)
 end
 
-function script.AimFromWeapon()
-	return centro
+function script.AimFromWeapon(num)
+	if num == 1 then
+		return cinturon
+	elseif num == 2 then
+		return centro
+	end
 end
 
-function script.QueryWeapon() 
-	return flare2
+function script.QueryWeapon(num) 
+	if num == 1 then
+		return cinturon
+	elseif num == 2 then
+		return flare2
+	end
 end
 --must return true to allow the weapon to shot. return false denies the weapon from shooting
 --can be used delay the shooting until a "turn turret" animation is completed
 
-function script.AimWeapon( heading, pitch )
+function script.AimWeapon(num, heading, pitch )
 	--make sure the aiming animation is only run once
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)

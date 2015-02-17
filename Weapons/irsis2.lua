@@ -1,4 +1,4 @@
-local weaponName="irsis1"
+local weaponName="irsis2"
 
 local weaponDef={
 	name="Ball",
