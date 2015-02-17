@@ -3,7 +3,7 @@ local weaponName = "erzeus1"
 
 local weaponDef = {
 	
-	name                    = "Pistola",
+	name                    = "gun",
 	weaponType              = "LaserCannon",
 	
 	Accuracy=10,
