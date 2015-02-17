@@ -16,14 +16,14 @@ local unitDef = {
 
 	--Health
 
-	maxDamage = 10000,
+	maxDamage = 1000,
 	idleAutoHeal = 0,
 	idleTime     = 0,
 
 	--Movement
 	
 	moveState = 0,
-	mass=5000,
+	mass=1000,
 	Acceleration = 0.4,
 	BrakeRate = 0.05,
 	FootprintX = 1,
@@ -32,7 +32,7 @@ local unitDef = {
 	MaxVelocity = 1.6,
 	MaxWaterDepth = 20,
 	MovementClass = "Default1x1",
-	TurnRate = 1000,
+	TurnRate = 900,
 
 	sightDistance = 2000,
 
@@ -44,6 +44,7 @@ local unitDef = {
 	CanPatrol = true,
 	CanStop = true,
 	LeaveTracks = false,
+	UpRight = true,
 
 	 sfxtypes = {
 		explosiongenerators = {

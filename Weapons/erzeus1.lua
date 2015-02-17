@@ -3,7 +3,7 @@ local weaponName = "erzeus1"
 
 local weaponDef = {
 	
-	name                    = "gun",
+	name                    = "FastShot",
 	weaponType              = "LaserCannon",
 	
 	Accuracy=10,
@@ -14,14 +14,14 @@ local weaponDef = {
 	avoidFeature = false,
 	
 	damage = {
-		default = 2000,
+		default = 300,
 	},
 --	areaOfEffect            = 10,
 	
 	--physics
 	
 	weaponVelocity          = 800,
-	reloadtime              = 10,
+	reloadtime              = 8,
 	range                   = 220,
 --	sprayAngle              = 45,
 	weaponaceleration       = 450,

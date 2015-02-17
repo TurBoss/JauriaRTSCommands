@@ -46,27 +46,16 @@ end
 --must return true to allow the weapon to shot. return false denies the weapon from shooting
 --can be used delay the shooting until a "turn turret" animation is completed
 
-function script.AimWeapon(num, heading, pitch )
+function script.AimWeapon( heading, pitch )
 	--make sure the aiming animation is only run once
-	if num == 1 then
-		Signal(SIG_AIM)
-		SetSignalMask(SIG_AIM)
-		
-		Turn(cinturon, z_axis, heading, math.rad(200))
+	Signal(SIG_AIM)
+	SetSignalMask(SIG_AIM)
+	
+	Turn(cinturon, z_axis, heading, math.rad(200))
 
-		--wait until the weapon is pointed in the right direction
-		WaitForTurn (cinturon, z_axis)
-		return true
-	elseif num == 2 then
-		Signal(SIG_AIM1)
-		SetSignalMask(SIG_AIM1)
-
-		Turn(cinturon, z_axis, heading, math.rad(200))
-
-		--wait until the weapon is pointed in the right direction
-		WaitForTurn (cinturon, z_axis)
-		return true
-	end
+	--wait until the weapon is pointed in the right direction
+	WaitForTurn (cinturon, z_axis)
+	return true
 end
 
 --called after the weapon has fired

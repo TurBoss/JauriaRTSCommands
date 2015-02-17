@@ -3,7 +3,7 @@ local weaponName = "erzeus2"
 
 local weaponDef = {
 	
-	name                    = "Rifle",
+	name                    = "DestroyImpact",
 	weaponType              = "LaserCannon",
 	
 	Accuracy=10,
@@ -16,14 +16,14 @@ local weaponDef = {
 	avoidFeature = false,
 	
 	damage = {
-		default = 9000,
+		default = 1000,
 	},
 --	areaOfEffect            = 10,
 	
 	--physics
 
 	weaponVelocity          = 1500,
-	reloadtime              = 12,
+	reloadtime              = 20,
 	range                   = 1200,
 --	sprayAngle              = 45,
 	weaponaceleration       = 850,

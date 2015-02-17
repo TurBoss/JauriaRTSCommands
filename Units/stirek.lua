@@ -16,20 +16,20 @@ local unitDef = {
 
 	--Health
 
-	maxDamage = 10000,
+	maxDamage = 1000,
 	idleAutoHeal = 0,
 	idleTime     = 0,
 
 	--Movement
 
 	moveState = 0,
-	mass=5000,
+	mass=1000,
 	Acceleration = 0.15,
 	BrakeRate = 0.08,
 	FootprintX = 1,
 	FootprintZ = 1,
 	MaxSlope = 12,
-	MaxVelocity = 1.2,
+	MaxVelocity = 1.3,
 	MaxWaterDepth = 20,
 	MovementClass = "Default1x1",
 	TurnRate = 1000,
