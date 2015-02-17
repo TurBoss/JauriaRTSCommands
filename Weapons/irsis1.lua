@@ -28,7 +28,7 @@ local weaponDef={
 	tracks=true,
 	Turnrate=16000,
 	collideFriendly=true,
-	commandfire = true,
+	--commandfire = true,
 	----APPEARANCE
 	
 	model="irsisball.dae",
