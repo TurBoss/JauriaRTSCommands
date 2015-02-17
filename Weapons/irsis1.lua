@@ -1,4 +1,4 @@
-local weaponName="irsis2"
+local weaponName="irsis1"
 
 local weaponDef={
 	name="Ball",
@@ -9,8 +9,8 @@ local weaponDef={
 	
 	InterceptedByShieldType= 4,
 	
-	paralyzer = true,
-	paralyzeTime = 2,
+	--paralyzer = true,
+	--paralyzeTime = 2,
 	
 	--Physic/flight path
 	range=800,
@@ -61,8 +61,8 @@ local weaponDef={
 
 	--sound
 	
-	soundStart		=	"kortus2",
-	soundHit		=	"kortus3",
+	--soundStart		=	"kortus2",
+	--soundHit		=	"kortus3",
 }
 
 return lowerkeys ({[weaponName]=weaponDef})
