@@ -12,6 +12,7 @@ end
 
 local selUnitID
 local weaponName = {}
+local weaponHumanName = {}
 local unitWeapons = {}
 
 local spGetViewGeometry	= Spring.GetViewGeometry
@@ -100,8 +101,24 @@ local function CreateWindow()
 	
 end
 
-function drawWeapon(weapon)
+function drawWeapon(weapon, name)
 
+	weaponName1 = Chili.TextBox:New{
+		parent = inventoryPanel1;
+		text	= name[1];
+		y		= "5%";
+		x		= "5%";
+		fontsize = math.floor(screenSizeX/110);
+	};
+	
+	weaponName2 = Chili.TextBox:New{
+		parent = inventoryPanel2;
+		text	= name[2];
+		y		= "5%";
+		x		= "5%";
+		fontsize = math.floor(screenSizeX/110);
+	};
+	
 	weaponImage1 = Chili.Image:New {
 		parent = inventoryPanel1;
 		tooltip = weapon[1],
@@ -125,8 +142,12 @@ end
 
 function removePics()
 	if weaponImage1 or weaponImage2 then
+		weaponName1:Dispose()
+		weaponName2:Dispose()
 		weaponImage1:Dispose()
 		weaponImage2:Dispose()
+		weaponName1 = nil
+		weaponName2 = nil
 		weaponImage1 = nil
 		weaponImage2 = nil
 	end
@@ -140,12 +161,14 @@ local function getWeaponsName(unitDefID)
 				if (weapon.weaponDef) then
 					local weaponDef = WeaponDefs[weapon.weaponDef]
 					if (weaponDef) then
+						local humanName = weaponDef.description
+						weaponHumanName[num] = humanName
 						local name = weaponDef.name
 						weaponName[num] = name
 					end
 				end
 			end
-			return weaponName
+			return weaponName, weaponHumanName
 		end
 	end
 end
@@ -157,13 +180,13 @@ local function UpdateSelection()
 		break
 	end
 	
-	local weapons = getWeaponsName(unitDefID)
+	local weapons ,name = getWeaponsName(unitDefID)
 	
 	selUnitID = unitDefID
 	
 	
 	removePics()
-	drawWeapon(weapons)
+	drawWeapon(weapons, name)
  end
 end
 --------------------------------------------------------------------------------

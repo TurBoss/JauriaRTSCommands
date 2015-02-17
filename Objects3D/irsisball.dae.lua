@@ -1,13 +1,7 @@
 model = {
-<<<<<<< HEAD
-   radius = 6,
+   radius = 5,
    --height = 10,
-   midpos = {0,18,0}, -- model center offset
-=======
-   radius = 14,
-   --height = 10,
-   midpos = {0,14,0}, -- model center offset
->>>>>>> dc443e36a8cd25f17cd5995ba68640052bd2d9eb
+   midpos = {0,1,0}, -- model center offset
    --[[tex1 = "corraid1_512.dds", -- same as S3O texture 1
    tex2 = "corraid2_512.dds", -- same as S3O texture 2
    invertteamcolor = true, -- invert tex1 alpha channel

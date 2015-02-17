@@ -1,7 +1,7 @@
 local weaponName="kortus2"
 
 local weaponDef={
-	name="Granade",
+	name="Stun",
 	weaponType=[[MissileLauncher]],
 
 	Accuracy=420,
