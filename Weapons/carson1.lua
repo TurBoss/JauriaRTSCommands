@@ -9,6 +9,7 @@ local weaponDef = {
 	Accuracy=100,
 	movingAccuracy=150,
 	
+	
 	--damage
 	
 	avoidFeature = false,
@@ -23,14 +24,14 @@ local weaponDef = {
 	
 	weaponVelocity          = 880,
 	reloadtime              = 5,
-	range                   = 500,
+	range                   = 1000,
 	sprayAngle              = 100,
 	weaponaceleration       = 860,
 	tolerance               = 3000,
 	lineOfSight             = true,
 	turret                  = true,
 	craterMult              = 0,
-	burst                   = 10,
+	burst                   = 8,
 	burstrate               = 0.1,
 	proyectiles             = 1,
 	

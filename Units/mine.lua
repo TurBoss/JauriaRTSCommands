@@ -14,14 +14,14 @@ local unitDef = {
 
 	buildCostMetal = 0,
 	buildCostEnergy = 0,
-	buildTime = 4.25,
+	buildTime = 6,
 	reclaimable = false,
 
 	--Health
 
-	maxDamage = 980,
-	idleAutoHeal = 14,
-	idleTime     = 3,
+	maxDamage = 80,
+	idleAutoHeal = 0,
+	idleTime     = 0,
 
 	Kamikaze = true,
 	KamikazeDistance = 100,
@@ -30,6 +30,8 @@ local unitDef = {
 	selfDestructCountdown = 0,
 
 	--Movement
+	
+	usepiececollisionvolumes = true,
 	
 	moveState = 0,
 	mass=600,

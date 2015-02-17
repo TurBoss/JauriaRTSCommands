@@ -21,6 +21,8 @@ local unitDef = {
 	idleTime     = 0,
 
 	--Movement
+	
+	usepiececollisionvolumes = true,
 
 	moveState = 0,
 	mass=1000,

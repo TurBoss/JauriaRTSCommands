@@ -8,14 +8,15 @@ local weaponDef = {
 	
 	Accuracy=100,
 	movingAccuracy=150,
-	areaOfEffect = 32,
+	
+	--areaOfEffect = 32,
 	
 	--damage
 	
 	avoidFeature = false,
 	
 	damage = {
-		default = 200,
+		default = 20,
 	},
 	
 	--physics
@@ -24,7 +25,7 @@ local weaponDef = {
 	
 	weaponVelocity          = 780,
 	reloadtime              = 3,
-	range                   = 1000,
+	range                   = 800,
 	sprayAngle              = 500,
 	weaponaceleration       = 860,
 	tolerance               = 3000,

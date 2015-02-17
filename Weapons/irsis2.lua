@@ -4,8 +4,8 @@ local weaponDef={
 	name="Ball",
 	weaponType=[[MissileLauncher]],
 
-	Accuracy=420,
-	movingAccuracy=700,
+	Accuracy=10,
+	movingAccuracy=10,
 	
 	InterceptedByShieldType= 4,
 	
@@ -13,8 +13,8 @@ local weaponDef={
 	--paralyzeTime = 2,
 	
 	--Physic/flight path
-	range=800,
-	reloadtime=5,
+	range=1500,
+	reloadtime=15,
 	weaponVelocity=200,
 	startVelocity=50,
 	weaponAcceleration=150,
@@ -49,9 +49,9 @@ local weaponDef={
 	----DAMAGE
 	
 	damage={
-		default=50000,
+		default=500,
 	},
-	areaOfEffect=110,
+	--areaOfEffect=110,
 	craterMult=0,
 	
 	--?FIXME***

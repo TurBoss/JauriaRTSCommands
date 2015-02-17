@@ -22,6 +22,8 @@ local unitDef = {
 
 	--Movement
 	
+	usepiececollisionvolumes = true,
+
 	moveState = 0,
 	mass=1000,
 	Acceleration = 0.2,

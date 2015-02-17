@@ -4,8 +4,8 @@ local weaponDef={
 	name="Stun",
 	weaponType=[[MissileLauncher]],
 
-	Accuracy=420,
-	movingAccuracy=700,
+	Accuracy=80,
+	movingAccuracy=120,
 	
 	InterceptedByShieldType= 4,
 	
@@ -14,7 +14,7 @@ local weaponDef={
 	
 	--Physic/flight path
 	range=800,
-	reloadtime=5,
+	reloadtime=15,
 	weaponVelocity=860,
 	startVelocity=390,
 	weaponAcceleration=620,
@@ -49,9 +49,9 @@ local weaponDef={
 	----DAMAGE
 	
 	damage={
-		default=50000,
+		default=5000,
 	},
-	areaOfEffect=110,
+	areaOfEffect=100,
 	craterMult=0,
 	
 	--?FIXME***
