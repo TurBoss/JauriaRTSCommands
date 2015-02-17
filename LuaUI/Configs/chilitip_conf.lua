@@ -1,6 +1,6 @@
 local ignoreweapon =
 {
-	--armaak = {1},
+	NOWEAPON = {1},
 }
 local iconFormat = '.png'
 
