@@ -76,7 +76,12 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local UnitEffects = {}
+local UnitEffects = {
+
+	[UnitDefNames["irsis"].id] = {
+		{class='ShieldJitter',options={size = 26, strength = 0.005, piece="cinturon",}},
+	},
+}
 local registeredUnits = {}	-- all finished units - prevents partial unbuild then rebuild from being treated as two UnitFinished events
 
 local function AddFX(unitname,fx)

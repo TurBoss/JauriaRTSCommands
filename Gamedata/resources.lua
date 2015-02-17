@@ -118,6 +118,8 @@ if (resources == nil) then
 				smokesmall				=	'pd/smokesmall.tga',
 				exp00_5					=	"gpl/explosion2/exp00_5.tga",
 				orangesmoke3			=	"gpl/smoke_orange.png",
+				
+				shield4					=	"projectiletextures/shield4.png",
 			},
 		}
 	}

@@ -678,7 +678,7 @@ function widget:DrawWorld()
   if (cmd == CMD_MANUALFIRE) then
     glColor(1, 0, 0, 0.75)
     glLineWidth(1)
-    glDrawGroundCircle(fx, fy, fz, info.range, circleDivs)
+    glDrawGroundCircle(fx, fy, fz, (info.range or 0), circleDivs)
     glColor(1,1,1,1)
   end
   
