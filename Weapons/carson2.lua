@@ -14,7 +14,7 @@ local weaponDef = {
 	avoidFeature = false,
 	
 	damage = {
-		default = 200,
+		default = 20,
 	},
 --	areaOfEffect            = 10,
 	
@@ -23,7 +23,7 @@ local weaponDef = {
 	commandfire = true,
 	
 	weaponVelocity          = 880,
-	reloadtime              = 10,
+	reloadtime              = 20,
 	range                   = 500,
 	sprayAngle              = 100,
 	weaponaceleration       = 860,

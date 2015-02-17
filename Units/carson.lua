@@ -16,14 +16,14 @@ local unitDef = {
 
 	--Health
 
-	maxDamage = 10000,
+	maxDamage = 1000,
 	idleAutoHeal = 0,
 	idleTime     = 0,
 
 	--Movement
 	
 	moveState = 0,
-	mass=5000,
+	mass=1000,
 	Acceleration = 0.2,
 	BrakeRate = 0.03,
 	FootprintX = 1,
@@ -44,6 +44,7 @@ local unitDef = {
 	CanPatrol = true,
 	CanStop = true,
 	LeaveTracks = false,
+	UpRight = true,
 
 	sfxtypes = {
 		explosiongenerators = {

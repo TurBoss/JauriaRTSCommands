@@ -1,68 +1,35 @@
-local weaponName="irsis1"
 
-local weaponDef={
-	name="Ball",
-	weaponType=[[MissileLauncher]],
+local weaponName = "irsis1"
 
-	Accuracy=420,
-	movingAccuracy=700,
+local weaponDef = {
 	
-	InterceptedByShieldType= 4,
+	name					= "Shield",
+	weaponType				= "Shield",
 	
-	--paralyzer = true,
-	--paralyzeTime = 2,
-	
-	--Physic/flight path
-	range=800,
-	reloadtime=5,
-	weaponVelocity=200,
-	startVelocity=50,
-	weaponAcceleration=150,
-	flightTime=5,
-	BurnBlow=0,
-	FixedLauncher=false,
-	trajectoryHeight=0.0,
-	dance=0,
-	wobble=0,
-	tolerance=3000,
-	tracks=true,
-	Turnrate=16000,
-	collideFriendly=true,
-	--commandfire = true,
-	----APPEARANCE
-	
-	model="irsisball.dae",
-	--smokeTrail=true,
-	--explosionGenerator="custom:genericshellexplosion-small-lightning",
-	--CegTag="light1",
-
-	----TARGETING
-	
-	turret=true,
-	CylinderTargeting=true,
-	avoidFeature=false,
-	avoidFriendly=false,
-	
-
-	--commandfire=true,
-
-	----DAMAGE
-	
-	damage={
-		default=50000,
+	damage = {
+		default = 10,
 	},
-	areaOfEffect=110,
-	craterMult=0,
+	texture1				= "shield4",
 	
-	--?FIXME***
+	exteriorShield			= true,
+	shieldAlpha				= 0.2,
+	shieldBadColor			= [[1 0.1 0.1]],
+	shieldGoodColor			= [[0 0.2 1]],
+	InterceptType			= 511,
+	shieldInterceptType		= 511,
+	shieldPower				= 660,
+	shieldPowerRegen		= 33,
+	shieldPowerRegenEnergy	= 0,
+	shieldRadius			= 54,
+	shieldRepulser			= false,
+	--shieldforce				= 10000,
+	--shieldmaxspeed			= 10000,
+	shieldStartingPower		= 620,
+	smartShield				= true,
+	visibleShield			= true,
+	visibleShieldHitFrames	= 4,
+	visibleShieldRepulse	= true,
 	
-	lineOfSight=true,
-
-
-	--sound
-	
-	--soundStart		=	"kortus2",
-	--soundHit		=	"kortus3",
 }
 
-return lowerkeys ({[weaponName]=weaponDef})
+return lowerkeys({[weaponName] = weaponDef})
