@@ -21,6 +21,7 @@ local	spIsCheatingEnabled	= Spring.IsCheatingEnabled
 local	spCreateUnit		= Spring.CreateUnit
 
 local startflagUID = 0
+
 local unitsCounterA = 0
 local unitsCounterB = 0
 
@@ -58,10 +59,10 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 
 	if unitTeam == 0 then
 		unitsCounterA = unitsCounterA - 1
-		--Spring.Echo(unitsCounterA)
+		Spring.Echo(unitsCounterA)
 	elseif unitTeam == 1 then
 		unitsCounterB = unitsCounterB - 1
-		--Spring.Echo(unitsCounterB)
+		Spring.Echo(unitsCounterB)
 	end
 end
 
@@ -76,14 +77,14 @@ function gadget:RecvLuaMsg(msg, playerID)
 		
 		if TeamID == Teams[1] then
 			unitsCounterA = unitsCounterA + 1
-			--Spring.Echo(unitsCounterA)
+			Spring.Echo(unitsCounterA)
 		elseif TeamID == Teams[2] then
 			unitsCounterB = unitsCounterB + 1
-			--Spring.Echo(unitsCounterB)
+			Spring.Echo(unitsCounterB)
 		end
 		if unitsCounterA < 6 or unitsCounterB < 6 then
 			local selectedUnitDefId		= tonumber(msg:sub(19))
-			DelayCall(CreateUnit, {selectedUnitDefId, playerID}, 90)
+			DelayCall(CreateUnit, {selectedUnitDefId, TeamID}, 90)
 			--CreateUnit(selectedUnitDefId, playerID)
 		end
 	end
