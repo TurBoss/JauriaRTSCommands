@@ -120,6 +120,14 @@ if (resources == nil) then
 				orangesmoke3			=	"gpl/smoke_orange.png",
 				
 				shield4					=	"projectiletextures/shield4.png",
+				bigexplosmoke			=	"projectiletextures/bigexplosmoke.tga",
+				wake					=	"projectiletextures/wake.tga",
+				flashside2				=	"projectiletextures/flashside2.tga",
+				rednovaexplo			=	"projectiletextures/rednovaexplo.tga",
+				flare					=	"projectiletextures/flare.tga",
+				whitelightb				=	"projectiletextures/whitelightb.tga",
+				brightblueexplo			=	"projectiletextures/brightblueexplo.tga",
+				lightbw					=	"projectiletextures/lightbw.tga",
 			},
 		}
 	}

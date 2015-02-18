@@ -14,8 +14,8 @@ function widget:Initialize()
 	--Spring.SendCommands("bind f4 showmetalmap")
 	--Spring.SendCommands("bind d manualfire")
 	
-	Spring.SendCommands("togglelos")
-	Spring.SendCommands("toggleradarandjammer")
+	Spring.SendCommands("togglelos 1")
+	Spring.SendCommands("toggleradarandjammer 1")
 	
 	Spring.LoadCmdColorsConfig('move  0.5 1.0 0.5 0.0')
 	
