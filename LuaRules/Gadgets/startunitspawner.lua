@@ -59,10 +59,10 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 
 	if unitTeam == 0 then
 		unitsCounterA = unitsCounterA - 1
-		--Spring.Echo(unitsCounterA)
+		Spring.Echo(unitsCounterA)
 	elseif unitTeam == 1 then
 		unitsCounterB = unitsCounterB - 1
-		--Spring.Echo(unitsCounterB)
+		Spring.Echo(unitsCounterB)
 	end
 end
 
