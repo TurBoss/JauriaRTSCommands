@@ -337,15 +337,9 @@ end
 
 
 local function blockMove(num)
-	Spring.MoveCtrl.Enable(unitID)
-	isMoving = false
-	
-	if num == 1 then
-		Signal(SIG_RESTORE)
-		SetSignalMask(SIG_RESTORE)
-		Sleep(900)
-		Spring.MoveCtrl.Disable(unitID)
-	elseif num == 2 then
+	if num == 2 then
+		Spring.MoveCtrl.Enable(unitID)
+		isMoving = false
 		Signal(SIG_RESTORE)
 		SetSignalMask(SIG_RESTORE)
 		Sleep(6500)
@@ -387,9 +381,7 @@ function script.AimWeapon(num, heading, pitch )
 	if num == 1 then
 		Signal(SIG_AIM)
 		SetSignalMask(SIG_AIM)
-		
-		StartThread(RestorePose)
-		StartThread(blockMove,1)
+
 		StartThread(stopCannon,1)
 
 		Turn(torso, z_axis, heading, math.rad(200))
