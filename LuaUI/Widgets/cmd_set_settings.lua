@@ -1,6 +1,6 @@
 function widget:GetInfo()
 	return {
-		name      = "settings",
+		name      = "Los settings and move colors",
 		desc      = "Widget to set various settings on game start",
 		author    = "TurBoss",
 		date      = "14-7-2014",
@@ -10,12 +10,14 @@ function widget:GetInfo()
 	}
 end
 
-function widget:GameStart()
+function widget:Initialize()
 	--Spring.SendCommands("bind f4 showmetalmap")
-	Spring.SendCommands("bind d manualfire")
+	--Spring.SendCommands("bind d manualfire")
 	
 	Spring.SendCommands("togglelos")
 	Spring.SendCommands("toggleradarandjammer")
 	
 	Spring.LoadCmdColorsConfig('move  0.5 1.0 0.5 0.0')
+	
+	widgetHandler:RemoveWidget(self)
 end
