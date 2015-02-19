@@ -30,7 +30,7 @@ end
 
 function CreateUnit(selectedUnitDefId, teamID, playerID)
 
-	--Spring.Echo("Create Unit " .. selectedUnitDefId .. " for " .. teamID)
+	Spring.Echo("Create Unit " .. selectedUnitDefId .. " for " .. teamID)
 	
 	local unitDefId			= selectedUnitDefId
 	local unitName			= UnitDefs[unitDefId].name
@@ -48,7 +48,7 @@ function CreateUnit(selectedUnitDefId, teamID, playerID)
 	flagX = flagX + math.random (20,100)
 	flagZ = flagZ + math.random (20,100)
 	
-	--Spring.MarkerAddPoint(flagX, flagY, flagZ)
+	Spring.MarkerAddPoint(flagX, flagY, flagZ)
 	spCreateUnit(	unitName, flagX, flagY, 
 							flagZ, 0, teamID)
 end
@@ -61,10 +61,10 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 
 	if unitTeam == 0 then
 		unitsCounterA = unitsCounterA - 1
-		--Spring.Echo(unitsCounterA)
+		Spring.Echo(unitsCounterA)
 	elseif unitTeam == 1 then
 		unitsCounterB = unitsCounterB - 1
-		--Spring.Echo(unitsCounterB)
+		Spring.Echo(unitsCounterB)
 	end
 end
 
@@ -79,10 +79,10 @@ function gadget:RecvLuaMsg(msg, playerID)
 		
 		if TeamID == Teams[1] then
 			unitsCounterA = unitsCounterA + 1
-			--Spring.Echo(TeamID .. " - " .. unitsCounterA)
+			Spring.Echo(TeamID .. " - " .. unitsCounterA)
 		elseif TeamID == Teams[2] then
 			unitsCounterB = unitsCounterB + 1
-			--Spring.Echo(TeamID .. " - " .. unitsCounterB)
+			Spring.Echo(TeamID .. " - " .. unitsCounterB)
 		end
 		if unitsCounterA < 6 or unitsCounterB < 6 then
 			local selectedUnitDefId		= tonumber(msg:sub(19))
