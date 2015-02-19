@@ -34,8 +34,8 @@ local weaponDef={
 	damage={
 		default = 800,
 	},
-	areaOfEffect=150,
-	craterMult=5,
+	areaOfEffect=120,
+	craterMult=0.5,
 	--?FIXME***
 	
 	lineOfSight=true,
