@@ -20,6 +20,8 @@ local DelayCall = GG.Delay.DelayCall
 local	spIsCheatingEnabled	= Spring.IsCheatingEnabled
 local	spCreateUnit		= Spring.CreateUnit
 
+local Teams = Spring.GetTeamList()
+
 local startflagUID = 0
 
 local unitsCounterA = 0
@@ -58,13 +60,14 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 	if unitDefID == UnitDefNames.mine.id then
 		return
 	end
-
-	if unitTeam == 0 then
+	
+	
+	if unitTeam == Teams[1] then
 		unitsCounterA = unitsCounterA - 1
-		Spring.Echo(unitsCounterA)
-	elseif unitTeam == 1 then
+		Spring.Echo("Unit Down ".. unitsCounterA)
+	elseif unitTeam == Teams[2] then
 		unitsCounterB = unitsCounterB - 1
-		Spring.Echo(unitsCounterB)
+		Spring.Echo("Unit Down ".. unitsCounterB)
 	end
 end
 
@@ -72,7 +75,6 @@ function gadget:RecvLuaMsg(msg, playerID)
 	if (msg:sub(1,18) == 'selectedstartunit:') then
 		
 		local TeamID = select(4,Spring.GetPlayerInfo(playerID))
-		local Teams = Spring.GetTeamList()
 		
 		--Spring.Echo(TeamID)
 		--Spring.Echo(Teams[1])
