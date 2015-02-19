@@ -86,7 +86,7 @@ function gadget:RecvLuaMsg(msg, playerID)
 			unitsCounterB = unitsCounterB + 1
 			Spring.Echo(TeamID .. " - " .. unitsCounterB)
 		end
-		if unitsCounterA < 7 or unitsCounterB < 7 then
+		if unitsCounterA <= 6 or unitsCounterB <= 6 then
 			local selectedUnitDefId		= tonumber(msg:sub(19))
 			DelayCall(CreateUnit, {selectedUnitDefId, TeamID, playerID}, 90)
 			--CreateUnit(selectedUnitDefId, playerID)
