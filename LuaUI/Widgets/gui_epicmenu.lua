@@ -45,7 +45,7 @@ do
 	local file = LUAUI_DIRNAME .. "Configs/epicmenu_conf.lua"
 	confdata = VFS.Include(file, nil, VFS.RAW_FIRST)
 	--assign keybind file:
-	keybind_file = LUAUI_DIRNAME .. 'Configs/' .. Game.modShortName:lower() .. '_keys.lua' --example: zk_keys.lua
+	keybind_file = LUAUI_DIRNAME .. 'Config/' .. Game.modShortName:lower() .. '_keys.lua' --example: zk_keys.lua
 
 	--check for validity, backup or delete
 	CheckLUAFileAndBackup(keybind_file,'') --this utility create backup file in user's Spring folder OR delete them if they are not LUA content (such as corrupted or wrong syntax). included in "utility_two.lua"
