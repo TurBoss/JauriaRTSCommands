@@ -695,8 +695,7 @@ local function WriteGroupInfo()
 	local unitInfoString = 
 		"Selected Units " .. numformat(unitInfoSum.count) ..
 		"\nHealth " .. numformat(unitInfoSum.hp) .. " / " ..  numformat(unitInfoSum.maxhp) ..
-		"\nCost " .. numformat(unitInfoSum.cost) .. " / " ..  numformat(unitInfoSum.finishedcost) ..
-		metal .. energy ..	buildpower .. dgunStatus
+		"\n" .. dgunStatus
 	
 	label_unitInfo = Label:New{ --recreate chili element (rather than just updating caption) to avoid color bug
 		parent = window_corner;
@@ -2535,9 +2534,9 @@ function widget:Initialize()
     real_window_corner = Window:New{
 		name  = 'selections',
 		color = {0, 0, 0, 0},
-		x = x,
-		y = screenHeight-height,
-        width = 450,
+		x = 0,
+		bottom = 240,
+        width = 375,
 		height = height,
 		dockable = true,
 		draggable = false,
@@ -2545,16 +2544,16 @@ function widget:Initialize()
 		tweakDraggable = true,
 		tweakResizable = true,
 		padding = {0, 0, 0, 0},
-        minWidth = 450, 
+        minWidth = 375, 
 		minHeight = 120,
 	}
     
-	window_corner = Panel:New{
+	window_corner = Window:New{
 		parent = real_window_corner,
         name   = 'unitinfo2';
 		x = 0,
 		y = 0,
-		backgroundColor = {1, 1, 1, options.selection_opacity.value},
+		--backgroundColor = {1, 1, 1, options.selection_opacity.value},
 		width = "100%";
 		height = "100%";
 		dockable = false,

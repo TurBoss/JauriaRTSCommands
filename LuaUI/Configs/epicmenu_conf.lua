@@ -159,17 +159,17 @@ local generalPath = 'Settings/Reset Settings'
 	ShLabel(generalPath, 'Reset graphic settings to minimum.')
 	ShButton(generalPath, 'Reset graphic settings',function()
 					spSendCommands{"water 0",
-						"Shadows 0",
+						"Shadows 1",
 						"maxparticles 100",
-						"advmodelshading 0",
+						"advmodelshading 1",
 						"grounddecals 0",
-						'luaui disablewidget LupsManager',
-						"luaui disablewidget Lups",
+						--'luaui disablewidget LupsManager',
+						--"luaui disablewidget Lups",
 						"luaui disablewidget Display DPS",
 						"luaui disablewidget Map Edge Extension",
-						"luaui disablewidget SelectionHalo",
-						"luaui disablewidget SelectionCircle",
-						"luaui disablewidget UnitShapes",
+						--"luaui disablewidget SelectionHalo",
+						--"luaui disablewidget SelectionCircle",
+						--"luaui disablewidget UnitShapes",
 					}
 				end,
 				'Use this if your performance is poor'
@@ -200,7 +200,7 @@ local gameSpeedPath = 'Game/Game Speed'
 		ShButton(gameSpeedPath, 'Decrease Speed', 'slowdown')
 		
 	ShLabel(gamePath, '')
-	ShButton(gamePath, 'Choose Commander Type', (function() spSendCommands{"luaui showstartupinfoselector"} end)) 
+--	ShButton(gamePath, 'Choose Commander Type', (function() spSendCommands{"luaui showstartupinfoselector"} end)) 
 --	ShButton(gamePath, 'Constructor Auto Assist', function() spSendCommands{"luaui togglewidget Constructor Auto Assist"} end)
 
 
