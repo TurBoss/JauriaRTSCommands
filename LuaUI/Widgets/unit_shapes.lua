@@ -50,8 +50,7 @@ local clearquad
 local shapes = {}
 
 local myTeamID = Spring.GetLocalTeamID()
---local r,g,b = Spring.GetTeamColor(myTeamID)
-local r,g,b = 0, 1, 0
+local r,g,b = Spring.GetTeamColor(myTeamID)
 local rgba = {r,g,b,1}
 local yellow = {1,1,0,1}
 
@@ -75,14 +74,12 @@ local visibleAllySelUnits = {}
 
 ------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
-options_path = 'Settings/Interface/Selection/Selection Shapes'
-options_order = {'showally'} 
+options_path = 'Settings/Interface'
 options = {
 	showally = {
 		name = 'Show Ally Selections',
-		desc = 'Highlight the units your allies currently have selected.', 
 		type = 'bool',
-		value = false,
+		value = true,
 		OnChange = function(self) 
 			visibleAllySelUnits = {}
 		end,
