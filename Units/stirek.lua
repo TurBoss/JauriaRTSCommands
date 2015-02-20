@@ -39,7 +39,7 @@ local unitDef = {
 	sightDistance = 2000,
 
 	CanCloak = true,
-	MinCloakDistance = 150,
+	MinCloakDistance = 100,
 	InitCloaked = true,
 	
 	Category = [[LAND]],

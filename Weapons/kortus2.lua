@@ -10,7 +10,7 @@ local weaponDef={
 	InterceptedByShieldType= 4,
 	
 	paralyzer = true,
-	paralyzeTime = 2,
+	paralyzeTime = 3,
 	
 	--Physic/flight path
 	range=800,
@@ -49,9 +49,9 @@ local weaponDef={
 	----DAMAGE
 	
 	damage={
-		default=5000,
+		default=1000,
 	},
-	areaOfEffect=100,
+	areaOfEffect=80,
 	craterMult=0,
 	
 	--?FIXME***

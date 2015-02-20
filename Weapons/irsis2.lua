@@ -49,7 +49,7 @@ local weaponDef={
 	----DAMAGE
 	
 	damage={
-		default=800,
+		default=700,
 	},
 	areaOfEffect=100,
 	craterMult=0,

@@ -63,7 +63,7 @@ local unitDef = {
 	CanAssist = false,
 	CanRestore = false,
 	workerTime = 0.50,
-	repairSpeed = 0.01,
+	repairSpeed = 0.007,
 	--reclaimSpeed = 1,
 	buildDistance = 80, 
 	

@@ -16,7 +16,7 @@ local weaponDef = {
 	avoidFeature = false,
 	
 	damage = {
-		default = 20,
+		default = 15,
 	},
 	
 	--physics
