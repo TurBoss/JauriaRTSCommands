@@ -161,7 +161,7 @@ local generalPath = 'Settings/Reset Settings'
 					spSendCommands{"water 0",
 						"Shadows 1",
 						"maxparticles 100",
-						"advmodelshading 1",
+						"advmodelshading 0",
 						"grounddecals 0",
 						--'luaui disablewidget LupsManager',
 						--"luaui disablewidget Lups",
@@ -333,24 +333,6 @@ local pathMisc = 'Settings/Misc'
 		advanced = true,
 		value = false,
 	})
-	AddOption(pathMisc,
-	{
-		name = 'Use Old Chili',
-		desc = 'Enable this if menu element is missing or does not render properly in Spring 96+. '..
-				'Do NOT enable if you see nothing wrong with the menu (it is slower).'..
-				'\n(type "/luaui reload" to apply settings)',
-		type = 'bool',
-		value = false,
-		OnChange = function (self)
-			local value = (self.value and 1) or 0 --true = 1, false = 0
-			if self.value then
-				Spring.Echo("Will use old Chili")
-			else
-				Spring.Echo("Will use new Chili")
-			end
-			Spring.SetConfigInt("ZKuseOldChili", value); --store in Springsettings.txt because api_chili.lua must read it independent of gui_epicmenu.lua
-		end,
-	})	
 
 
 local pathMiscScreenshots = 'Settings/Misc/Screenshots'	
