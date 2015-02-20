@@ -16,18 +16,18 @@ local weaponDef = {
 	avoidFeature = false,
 	
 	damage = {
-		default = 800,
+		default = 1000,
 	},
 --	areaOfEffect            = 10,
 	
 	--physics
 
-	weaponVelocity          = 1500,
-	reloadtime              = 20,
+	weaponVelocity          = 2300,
+	reloadtime              = 10,
 	range                   = 2300,
 --	sprayAngle              = 45,
 	weaponaceleration       = 850,
-	tolerance               = 10000,
+	tolerance               = 100,
 	lineOfSight             = true,
 	turret                  = true,
 	craterMult              = 0,
@@ -49,7 +49,7 @@ local weaponDef = {
 	
 	soundStart              = "erzeus2",
 	
-	collideFriendly=true,
+	collideFriendly=false,
 	noSelfDamage= false,
 }
 return lowerkeys({[weaponName] = weaponDef})

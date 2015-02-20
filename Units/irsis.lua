@@ -53,7 +53,22 @@ local unitDef = {
 			--"custom:WARMUZZLE",
 			--"custom:DEVA_SHELLS",
 		--},
-	--}, 
+	--},
+	
+	Builder = true,
+	ShowNanoSpray = true,
+	CanBeAssisted = false,
+	CanReclaim = false,
+	CanRepair = true,
+	CanAssist = false,
+	CanRestore = false,
+	workerTime = 0.50,
+	repairSpeed = 0.01,
+	--reclaimSpeed = 1,
+	buildDistance = 80, 
+	
+	buildoptions = {
+	},
 
 
 	weapons = {

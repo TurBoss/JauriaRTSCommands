@@ -15,9 +15,9 @@ local weaponDef={
 	--Physic/flight path
 	range=1500,
 	reloadtime=10,
-	weaponVelocity=200,
-	startVelocity=50,
-	weaponAcceleration=150,
+	weaponVelocity=500,
+	startVelocity=150,
+	weaponAcceleration=250,
 	flightTime=5,
 	BurnBlow=0,
 	FixedLauncher=false,
@@ -27,7 +27,7 @@ local weaponDef={
 	tolerance=3000,
 	tracks=true,
 	Turnrate=16000,
-	collideFriendly=true,
+	collideFriendly=false,
 	commandfire = true,
 	----APPEARANCE
 	
@@ -49,9 +49,9 @@ local weaponDef={
 	----DAMAGE
 	
 	damage={
-		default=500,
+		default=800,
 	},
-	areaOfEffect=80,
+	areaOfEffect=100,
 	craterMult=0,
 	
 	--?FIXME***

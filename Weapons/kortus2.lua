@@ -27,7 +27,7 @@ local weaponDef={
 	tolerance=3000,
 	tracks=false,
 	Turnrate=16000,
-	collideFriendly=true,
+	collideFriendly=false,
 	commandfire = true,
 	----APPEARANCE
 	

@@ -19,7 +19,7 @@ local unitDef = {
 
 	--Health
 
-	maxDamage = 80,
+	maxDamage = 200,
 	idleAutoHeal = 0,
 	idleTime     = 0,
 
@@ -45,7 +45,7 @@ local unitDef = {
 	MovementClass = "Default1x1",
 	TurnRate = 0,
 
-	sightDistance = 340,
+	sightDistance = 10,
 
 	Category = [[LAND]],
 	CanAttack = false,
@@ -57,7 +57,7 @@ local unitDef = {
 	noAutoFire = false,
 
 	CanCloak = true,
-	MinCloakDistance = 150,
+	MinCloakDistance = 0,
 	InitCloaked = true,
 	stealth = true,
 

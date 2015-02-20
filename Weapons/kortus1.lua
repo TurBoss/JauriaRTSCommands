@@ -24,7 +24,7 @@ local weaponDef = {
 	--commandfire = true,
 	
 	weaponVelocity          = 780,
-	reloadtime              = 3,
+	reloadtime              = 5,
 	range                   = 800,
 	sprayAngle              = 500,
 	weaponaceleration       = 860,
@@ -52,7 +52,7 @@ local weaponDef = {
 	soundStart              = "kortus1",
 	soundTrigger            = true,
 	
-	collideFriendly=true,
+	collideFriendly=false,
 	noSelfDamage= false,
 }
 return lowerkeys({[weaponName] = weaponDef})

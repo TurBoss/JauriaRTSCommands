@@ -49,7 +49,7 @@ local weaponDef = {
 	
 	soundStart              = "carson1",
 	
-	collideFriendly=true,
+	collideFriendly=false,
 	noSelfDamage= false,
 }
 return lowerkeys({[weaponName] = weaponDef})

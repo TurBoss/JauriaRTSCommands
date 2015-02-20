@@ -330,7 +330,7 @@ local function stopCannon(num)
 	elseif num == 2 then
 		Signal(SIG_STOP)
 		SetSignalMask(SIG_STOP)
-		Sleep(10000)
+		Sleep(12000)
 		StopSpin(cannon, y_axis)
 	end
 end
@@ -342,7 +342,8 @@ local function blockMove(num)
 		isMoving = false
 		Signal(SIG_RESTORE)
 		SetSignalMask(SIG_RESTORE)
-		Sleep(6500)
+		Sleep(6000)
+		Spring.Echo("salchichon")
 		Spring.MoveCtrl.Disable(unitID)
 	end
 end

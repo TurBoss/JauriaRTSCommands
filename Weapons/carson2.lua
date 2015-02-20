@@ -23,15 +23,15 @@ local weaponDef = {
 	commandfire = true,
 	
 	weaponVelocity          = 880,
-	reloadtime              = 20,
+	reloadtime              = 12,
 	range                   = 1000,
-	sprayAngle              = 100,
+	sprayAngle              = 500,
 	weaponaceleration       = 860,
 	tolerance               = 3000,
 	lineOfSight             = true,
 	turret                  = true,
 	craterMult              = 0,
-	burst                   = 40,
+	burst                   = 60,
 	burstrate               = 0.1,
 	proyectiles             = 1,
 	
@@ -49,7 +49,7 @@ local weaponDef = {
 	
 	soundStart              = "carson2",
 	
-	collideFriendly=true,
+	collideFriendly=false,
 	noSelfDamage= false,
 }
 return lowerkeys({[weaponName] = weaponDef})

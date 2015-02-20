@@ -55,10 +55,10 @@ local unitDef = {
 	},
 
 	weapons = {
-		[1]={name  = "erzeus1",
-			onlyTargetCategory = [[LAND]],
-			maxAngleDif = 210,
-			mainDir = [[0 0 1]],
+		[1]={name  = "NOWEAPON",
+			--onlyTargetCategory = [[LAND]],
+			--maxAngleDif = 210,
+			--mainDir = [[0 0 1]],
 		},
 		[2]={name  = "erzeus2",
 			onlyTargetCategory = [[LAND]],

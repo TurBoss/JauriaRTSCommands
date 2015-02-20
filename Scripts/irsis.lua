@@ -17,6 +17,7 @@ local root = piece('root');
 
 local SIG_AIM = 1
 local SIG_AIM1 = 2
+local SIG_RC = 4
 
 local wheel_speed = math.rad(300)
 
@@ -34,6 +35,23 @@ function script.StopMoving()
 end
 
 function script.Shot(num)
+end
+
+function script.StopBuilding()
+	--Turn (arma, z_axis, 0, math.rad(100))
+	SetUnitValue(COB.INBUILDSTANCE, 0)
+end
+
+function script.StartBuilding(heading, pitch)  
+	Signal(SIG_RC)
+	SetSignalMask(SIG_RC)
+	Turn (cinturon, z_axis, heading, math.rad(100))
+	WaitForTurn(cinturon, z_axis)
+	SetUnitValue(COB.INBUILDSTANCE, 1)
+end
+
+function script.QueryNanoPiece()
+	return flare1
 end
 
 function script.AimFromWeapon(num)
