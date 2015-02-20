@@ -19,6 +19,8 @@ local SIG_AIM = 1
 local SIG_AIM1 = 2
 local SIG_RC = 4
 
+local grav = SFX.CEG
+
 local wheel_speed = math.rad(300)
 
 function script.Create()
@@ -35,6 +37,7 @@ function script.StopMoving()
 end
 
 function script.Shot(num)
+	EmitSfx(flare1, grav)
 end
 
 function script.StopBuilding()

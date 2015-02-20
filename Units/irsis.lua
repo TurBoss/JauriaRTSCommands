@@ -48,12 +48,11 @@ local unitDef = {
 	LeaveTracks = false,
 	UpRight = true,
 
-	--sfxtypes = {
-		--explosiongenerators = {
-			--"custom:WARMUZZLE",
-			--"custom:DEVA_SHELLS",
-		--},
-	--},
+	sfxtypes = {
+		explosiongenerators = {
+			"custom:GRAV",
+		},
+	},
 	
 	Builder = true,
 	ShowNanoSpray = true,

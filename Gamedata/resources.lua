@@ -118,6 +118,7 @@ if (resources == nil) then
 				smokesmall				=	'pd/smokesmall.tga',
 				exp00_5					=	"gpl/explosion2/exp00_5.tga",
 				orangesmoke3			=	"gpl/smoke_orange.png",
+				chargeparticles			=	'PD/chargeparticles.tga',
 				
 				shield4					=	"projectiletextures/shield4.png",
 				bigexplosmoke			=	"projectiletextures/bigexplosmoke.tga",
