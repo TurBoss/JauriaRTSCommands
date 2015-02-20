@@ -14,6 +14,8 @@ if (not gadgetHandler:IsSyncedCode()) then
 	return false
 end
 
+local Teams = Spring.GetTeamList()
+
 local unitDestroyedCounterA = 0
 local unitDestroyedCounterB = 0
 
@@ -23,9 +25,9 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 		return
 	end
 	
-	if ((attackerTeam == 0) and ( attackerTeam ~= unitTeam)) then
+	if ((attackerTeam == Teams[1]) and ( attackerTeam ~= unitTeam)) then
 		unitDestroyedCounterA = unitDestroyedCounterA +1
-	elseif ((attackerTeam == 1) and ( attackerTeam ~= unitTeam)) then
+	elseif ((attackerTeam == Teams[1]) and ( attackerTeam ~= unitTeam)) then
 		unitDestroyedCounterB = unitDestroyedCounterB +1
 	end
 	Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
