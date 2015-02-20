@@ -27,7 +27,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 	
 	if ((attackerTeam == Teams[1]) and ( attackerTeam ~= unitTeam)) then
 		unitDestroyedCounterA = unitDestroyedCounterA +1
-	elseif ((attackerTeam == Teams[1]) and ( attackerTeam ~= unitTeam)) then
+	elseif ((attackerTeam == Teams[2]) and ( attackerTeam ~= unitTeam)) then
 		unitDestroyedCounterB = unitDestroyedCounterB +1
 	end
 	Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
