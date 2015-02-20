@@ -13,6 +13,8 @@ end
 local unitDestroyedCounterA = 0
 local unitDestroyedCounterB = 0
 
+local Teams = Spring.GetTeamList()
+
 local spGetViewGeometry	= Spring.GetViewGeometry
 
 local screenSizeX, screenSizeY	= spGetViewGeometry()
@@ -41,13 +43,13 @@ local function CreateWindow()
 		padding		= {2,2,2,2};
 		children	= {
 			Chili.Label:New{
-				caption	= "Team A";
+				caption	= "Team ".. Teams[1]+1;
 				y		= "6%";
 				x		= "7.5%";
 				fontsize = math.floor(screenSizeX/75);
 			},
 			Chili.Label:New{
-				caption	= "Team B";
+				caption	= "Team ".. Teams[2]+1;
 				y		= "6%";
 				x		= "55%";
 				fontsize = math.floor(screenSizeX/75);
