@@ -132,7 +132,7 @@ function widget:Initialize()
 end
 
 function widget:GameFrame(f)
-	if (f % 180 ==0) then 
+	if (f % 30 ==0) then 
 		unitDestroyedCounterA = Spring.GetGameRulesParam("unitDestroyedCounterA")
 		unitDestroyedCounterB = Spring.GetGameRulesParam("unitDestroyedCounterB")
 		counterLabel1:Dispose()
