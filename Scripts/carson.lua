@@ -343,7 +343,6 @@ local function blockMove(num)
 		Signal(SIG_RESTORE)
 		SetSignalMask(SIG_RESTORE)
 		Sleep(6000)
-		Spring.Echo("salchichon")
 		Spring.MoveCtrl.Disable(unitID)
 	end
 end

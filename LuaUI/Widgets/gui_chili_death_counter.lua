@@ -43,13 +43,13 @@ local function CreateWindow()
 		padding		= {2,2,2,2};
 		children	= {
 			Chili.Label:New{
-				caption	= "Team ".. Teams[1];
+				caption	= "Team ".. Teams[1]+1;
 				y		= "6%";
 				x		= "7.5%";
 				fontsize = math.floor(screenSizeX/75);
 			},
 			Chili.Label:New{
-				caption	= "Team ".. Teams[2];
+				caption	= "Team ".. Teams[2]+1;
 				y		= "6%";
 				x		= "55%";
 				fontsize = math.floor(screenSizeX/75);
