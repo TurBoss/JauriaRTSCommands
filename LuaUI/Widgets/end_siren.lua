@@ -30,7 +30,7 @@ function widget:GameFrame(f)
 			enableSiren = false
 		end
 	end
-	if ((f % 60 == 0)and enableSiren) then
+	if (f % 60 == 0)and enableSiren then
 		playSiren()
 	end
 end
