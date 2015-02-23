@@ -46,7 +46,7 @@ local function SetupDefaultPreset()
 	widgetHandler:DisableWidget("Grabinput")
 	widgetHandler:DisableWidget("Watchdog")
 	widgetHandler:DisableWidget("HealthBars")
-	widgetHandler:DisableWidget("Show All Commands v2")
+	--widgetHandler:DisableWidget("Show All Commands v2")
 	
 	
 	
@@ -87,7 +87,7 @@ local function SetupDefaultPreset()
 	widgetHandler:EnableWidget("Select n Center!")
 	widgetHandler:EnableWidget("Start Units")
 	widgetHandler:EnableWidget("command list window")
-	widgetHandler:EnableWidget("replay control buttons")
+	widgetHandler:EnableWidget("Replay control buttons")
 	widgetHandler:EnableWidget("MinimapEvents")
 	widgetHandler:EnableWidget("Music Player")
 	widgetHandler:EnableWidget("Autoquit")
@@ -96,6 +96,7 @@ local function SetupDefaultPreset()
 	widgetHandler:EnableWidget("Cloak Fire State")
 	widgetHandler:EnableWidget("CustomFormations2")
 	widgetHandler:EnableWidget("UnitShapes")
+	widgetHandler:EnableWidget("Show All Commands v2")
 	
 
 end
