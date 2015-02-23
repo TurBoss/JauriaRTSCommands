@@ -12,19 +12,20 @@ end
 
 local alertTime = 15
 local enableSiren = false
+local gameOver = false
 
 local function playSiren()
 	Spring.PlaySoundFile("siren")
 end
 
 function widget:GameOver()
-	enableSiren = false
+	gameOver = true
 end
 
 function widget:GameFrame(f)
 	if (f % 30 == 0) then 
 		timer = Spring.GetGameRulesParam("GameTimer")
-		if timer < alertTime then
+		if timer < alertTime and not (gameOver) then
 			enableSiren = true
 		else
 			enableSiren = false
