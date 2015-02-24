@@ -22,7 +22,12 @@ local unitDef = {
 
 	--Movement
 	
-	usepiececollisionvolumes = true,
+	
+	collisionVolumeOffsets = [[0 0 0]],
+	collisionVolumeScales = [[15 30 15]],
+	collisionVolumeType = [[cylY]],
+	
+	--usepiececollisionvolumes = true,
 
 	moveState = 0,
 	mass=1000,
