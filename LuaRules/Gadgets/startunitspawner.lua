@@ -17,7 +17,6 @@ end
 
 local DelayCall = GG.Delay.DelayCall
 
-local	spIsCheatingEnabled	= Spring.IsCheatingEnabled
 local	spCreateUnit		= Spring.CreateUnit
 
 local Teams = Spring.GetTeamList()
@@ -64,32 +63,42 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 	
 	if unitTeam == Teams[1] then
 		unitsCounterA = unitsCounterA - 1
+		if unitsCounterA < 0 then unitsCounterA = 0 end
 		--Spring.Echo("Unit Down ".. unitsCounterA)
 	elseif unitTeam == Teams[2] then
 		unitsCounterB = unitsCounterB - 1
+		if unitsCounterB < 0 then unitsCounterB = 0 end
 		--Spring.Echo("Unit Down ".. unitsCounterB)
 	end
+	
 end
 
 function gadget:RecvLuaMsg(msg, playerID)
 	if (msg:sub(1,18) == 'selectedstartunit:') then
 		
-		local TeamID = select(4,Spring.GetPlayerInfo(playerID))
+		local teamID				= select(4,Spring.GetPlayerInfo(playerID))
+		
+		local selectedUnitDefId		= tonumber(msg:sub(19))
 		
 		--Spring.Echo(TeamID)
 		--Spring.Echo(Teams[1])
 		
-		if TeamID == Teams[1] then
+		if teamID == Teams[1] then
 			unitsCounterA = unitsCounterA + 1
-			--Spring.Echo(TeamID .. " - " .. unitsCounterA)
-		elseif TeamID == Teams[2] then
+			Spring.Echo(teamID .. " - " .. unitsCounterA)
+		elseif teamID == Teams[2] then
 			unitsCounterB = unitsCounterB + 1
-			--Spring.Echo(TeamID .. " - " .. unitsCounterB)
+			Spring.Echo(teamID .. " - " .. unitsCounterB)
 		end
-		if unitsCounterA <= 6 or unitsCounterB <= 6 then
-			local selectedUnitDefId		= tonumber(msg:sub(19))
-			DelayCall(CreateUnit, {selectedUnitDefId, TeamID, playerID}, 90)
-			--CreateUnit(selectedUnitDefId, playerID)
+		
+		if unitsCounterA <= 6 and teamID == Teams[1] then
+		
+			DelayCall(CreateUnit, {selectedUnitDefId, teamID, playerID}, 90)
+			
+		elseif unitsCounterB <= 6 and teamID == Teams[2] then
+		
+			DelayCall(CreateUnit, {selectedUnitDefId, teamID, playerID}, 90)
+			
 		end
 	end
 end
