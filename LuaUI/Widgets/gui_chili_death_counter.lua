@@ -15,9 +15,13 @@ local unitDestroyedCounterB = 0
 
 local Teams = Spring.GetTeamList()
 
-local spGetViewGeometry	= Spring.GetViewGeometry
+local spGetViewGeometry		= Spring.GetViewGeometry
+local spGetTeamColor		= Spring.GetTeamColor
 
 local screenSizeX, screenSizeY	= spGetViewGeometry()
+
+local aColor = {0, 0, 0, 1}
+local bColor = {0, 0, 0, 1}
 
 local Chili
 local black	= {0.1, 0.1, 0.1, 1.0}
@@ -28,6 +32,23 @@ local red	= {0.8, 0.0, 0.0, 1.0}
 
 local counterWindow = {}
 local counterPanel1, counterPanel2, counterLabel1, counterLabel2
+
+local function getTeamsColor()
+
+	local r, g, b  = spGetTeamColor(Teams[1])
+
+	aColor[1] = r
+	aColor[2] = g
+	aColor[3] = b
+	
+	
+	local r, g, b  = spGetTeamColor(Teams[2])
+
+	bColor[1] = r
+	bColor[2] = g
+	bColor[3] = b
+	
+end
 
 local function CreateWindow()
 	counterWindow	= Chili.Window:New{
@@ -90,6 +111,7 @@ function UpdateCounter()
 		parent		= counterPanel1;
 		name		= "counter label A";
 		caption		= unitDestroyedCounterA;
+		textColor	= aColor;
 		fontsize	= math.floor(screenSizeX/50);
 		padding 	= {0,0,0,0};
 		valign		= 'center';
@@ -106,6 +128,7 @@ function UpdateCounter()
 		parent		= counterPanel2;
 		name		= "counter label B";
 		caption		= unitDestroyedCounterB;
+		textColor	= bColor;
 		fontsize	= math.floor(screenSizeX/50);
 		padding 	= {0,0,0,0};
 		valign		= 'center';
@@ -127,6 +150,7 @@ function widget:Initialize()
 		return
 	end
 	
+	getTeamsColor()
 	CreateWindow()
 	UpdateCounter()
 end

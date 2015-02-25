@@ -22,7 +22,12 @@ local unitDef = {
 
 	--Movement
 	
-	usepiececollisionvolumes = true,
+	
+	collisionVolumeOffsets = [[0 0 0]],
+	collisionVolumeScales = [[15 30 15]],
+	collisionVolumeType = [[cylY]],
+	
+	--usepiececollisionvolumes = true,
 
 	moveState = 0,
 	mass=1000,
@@ -36,7 +41,7 @@ local unitDef = {
 	TurnRate = 900,
 
 	sightDistance = 2000,
-
+	
 	Category = [[LAND]],
 	CanManualFire = true, 
 	CanAttack = true,
@@ -57,9 +62,6 @@ local unitDef = {
 
 	weapons = {
 		[1]={name  = "NOWEAPON",
-			--onlyTargetCategory = [[LAND]],
-			--maxAngleDif = 210,
-			--mainDir = [[0 0 1]],
 		},
 		[2]={name  = "carson2",
 			onlyTargetCategory = [[LAND]],
