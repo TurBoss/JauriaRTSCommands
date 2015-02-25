@@ -30,7 +30,6 @@ local unitDef = {
 	BrakeRate = 0.03,
 	FootprintX = 1,
 	FootprintZ = 1,
-	MaxSlope = 12,
 	MaxVelocity = 1.4,
 	MaxWaterDepth = 20,
 	MovementClass = "Default1x1",

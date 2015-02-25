@@ -4,8 +4,9 @@ local moveDefs =
 	name = "Default1x1",
 	footprintX = 1,
 	maxWaterDepth = 10,
-	maxSlope = 20,
-	crushStrength = 100,
+	crushStrength = 10,
+	MaxSlope = 30,
+	maxHeightDif= 10,
 	},
 	{
 	name = "Default2x2",
