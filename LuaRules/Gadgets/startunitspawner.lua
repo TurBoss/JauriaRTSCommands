@@ -85,10 +85,10 @@ function gadget:RecvLuaMsg(msg, playerID)
 		
 		if teamID == Teams[1] then
 			unitsCounterA = unitsCounterA + 1
-			Spring.Echo(teamID .. " - " .. unitsCounterA)
+			--Spring.Echo(teamID .. " - " .. unitsCounterA)
 		elseif teamID == Teams[2] then
 			unitsCounterB = unitsCounterB + 1
-			Spring.Echo(teamID .. " - " .. unitsCounterB)
+			--Spring.Echo(teamID .. " - " .. unitsCounterB)
 		end
 		
 		if unitsCounterA <= 6 and teamID == Teams[1] then

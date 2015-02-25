@@ -26,11 +26,11 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerD
 	end
 	
 	if ((attackerTeam == Teams[1]) and ( attackerTeam ~= unitTeam)) then
-		Spring.Echo("Team1")
+		--Spring.Echo("Team1")
 		unitDestroyedCounterA = unitDestroyedCounterA +1
 		Spring.SetGameRulesParam("unitDestroyedCounterA", unitDestroyedCounterA)
 	elseif ((attackerTeam == Teams[2]) and ( attackerTeam ~= unitTeam)) then
-		Spring.Echo("Team2")
+		--Spring.Echo("Team2")
 		unitDestroyedCounterB = unitDestroyedCounterB +1
 		Spring.SetGameRulesParam("unitDestroyedCounterB", unitDestroyedCounterB)
 	end
