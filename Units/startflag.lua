@@ -36,7 +36,7 @@ local unitDef = {
 	TurnRate = 0,
 	YardMap =" o ",
 
-	sightDistance = 340,
+	sightDistance = 100,
 
 	Category = [[LAND]],
 	CanAttack = false,

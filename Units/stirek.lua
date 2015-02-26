@@ -24,7 +24,7 @@ local unitDef = {
 	
 	
 	collisionVolumeOffsets = [[0 0 0]],
-	collisionVolumeScales = [[15 30 15]],
+	collisionVolumeScales = [[15 22 15]],
 	collisionVolumeType = [[cylY]],
 	
 	--usepiececollisionvolumes = true,
@@ -41,7 +41,7 @@ local unitDef = {
 	MovementClass = "Default1x1",
 	TurnRate = 1000,
 
-	sightDistance = 2000,
+	sightDistance = 800,
 
 	CanCloak = true,
 	MinCloakDistance = 100,

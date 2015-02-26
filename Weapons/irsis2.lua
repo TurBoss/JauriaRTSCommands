@@ -13,7 +13,7 @@ local weaponDef={
 	--paralyzeTime = 2,
 	
 	--Physic/flight path
-	range=1500,
+	range=800,
 	reloadtime=10,
 	weaponVelocity=500,
 	startVelocity=150,
@@ -49,7 +49,7 @@ local weaponDef={
 	----DAMAGE
 	
 	damage={
-		default=700,
+		default=400,
 	},
 	areaOfEffect=100,
 	craterMult=0,

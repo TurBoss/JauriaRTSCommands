@@ -45,7 +45,7 @@ local unitDef = {
 	MovementClass = "Default1x1",
 	TurnRate = 0,
 
-	sightDistance = 10,
+	sightDistance = 20,
 
 	Category = [[LAND]],
 	CanAttack = false,
