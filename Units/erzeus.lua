@@ -27,6 +27,7 @@ local unitDef = {
 	collisionVolumeScales = [[15 22 15]],
 	collisionVolumeType = [[cylY]],
 	
+	losEmitHeight = 3,
 	--usepiececollisionvolumes = true,
 
 	moveState = 0,
