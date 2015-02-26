@@ -2534,9 +2534,9 @@ function widget:Initialize()
     real_window_corner = Window:New{
 		name  = 'selections',
 		color = {0, 0, 0, 0},
-		x = 0,
-		bottom = 240,
-        width = 375,
+		x = "34%",
+		bottom = 0,
+        width = 330,
 		height = height,
 		dockable = true,
 		draggable = false,
@@ -2544,7 +2544,7 @@ function widget:Initialize()
 		tweakDraggable = true,
 		tweakResizable = true,
 		padding = {0, 0, 0, 0},
-        minWidth = 375, 
+        minWidth = 330, 
 		minHeight = 120,
 	}
     

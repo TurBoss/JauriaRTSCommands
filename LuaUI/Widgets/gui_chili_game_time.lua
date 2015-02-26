@@ -29,7 +29,7 @@ local function CreateWindow()
 	timeWindow	= Chili.Window:New{
 		parent		= Chili.Screen0;
 		name		= "time window";
-		x			= "42%";
+		x			= "35%";
 		y			= 0;
 		width		= "15%";
 		height		= "10%";

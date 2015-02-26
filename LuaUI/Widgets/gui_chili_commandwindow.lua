@@ -349,8 +349,8 @@ function widget:Initialize()
 		children = {stateCommandWindow},
 	}
 	window2 = Chili.Window:New{
-		x = "34%",
-		bottom = 0,
+		x = "26%",
+		bottom = 110,
 		dockable = false,
 		parent = screen0,
 		caption = "Item",
