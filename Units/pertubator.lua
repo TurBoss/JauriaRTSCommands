@@ -61,18 +61,18 @@ local unitDef = {
 	--	},
 	--},
 
-	--weapons = {
-	--	[1]={name  = "NOWEAPON",
-	--		--onlyTargetCategory = [[LAND]],
-	--		--maxAngleDif = 210,
-	--		--mainDir = [[0 0 1]],
-	--	},
-	--	[2]={name  = "erzeus2",
-	--		onlyTargetCategory = [[LAND]],
-	--		maxAngleDif = 210,
-	--		mainDir = [[0 0 1]],
-	--	},
-	--},
+	weapons = {
+		[1]={name  = "erzeus2",
+			onlyTargetCategory = [[LAND]],
+			maxAngleDif = 210,
+			mainDir = [[0 0 1]],
+		},
+		[2]={name  = "erzeus2",
+			onlyTargetCategory = [[LAND]],
+			maxAngleDif = 210,
+			mainDir = [[0 0 1]],
+		},
+	},
 }
 
 return lowerkeys({ [unitName] = unitDef })
