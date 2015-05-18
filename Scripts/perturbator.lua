@@ -391,14 +391,15 @@ function script.AimWeapon(num, heading, pitch )
 	SetSignalMask(SIG_AIM)
 	
 	Turn(cuerpo, z_axis, heading,  math.rad(120))
-	Turn(hombrod, x_axis, -pitch-0.5, math.rad(120))
-	Turn(antebrazod, x_axis, -pitch-1.0, math.rad(120))
+	Turn(hombrod, x_axis, -pitch-0.5, math.rad(180))
+	Turn(antebrazod, x_axis, -pitch-1.0, math.rad(180))
 	
 	WaitForTurn(cuerpo, z_axis)
 	WaitForTurn(hombrod, x_axis)
 	WaitForTurn(antebrazod, x_axis)
 	
 	StartThread(RestoreTorso)
+	
 	isShooting = true
 	return true
 end

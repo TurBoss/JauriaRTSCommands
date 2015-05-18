@@ -62,12 +62,12 @@ local unitDef = {
 	--},
 
 	weapons = {
-		[1]={name  = "erzeus2",
+		[1]={name  = "perturbator1",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
 		},
-		[2]={name  = "erzeus2",
+		[2]={name  = "perturbator2",
 			onlyTargetCategory = [[LAND]],
 			maxAngleDif = 210,
 			mainDir = [[0 0 1]],
