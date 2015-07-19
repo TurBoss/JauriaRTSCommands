@@ -2,34 +2,33 @@
 local weaponName = "irsis1"
 
 local weaponDef = {
-	
+
 	name					= "Shield",
 	weaponType				= "Shield",
-	
+
 	damage = {
 		default = 10,
 	},
 	texture1				= "shield4",
-	
-	exteriorShield			= true,
-	shieldAlpha				= 0.2,
-	shieldBadColor			= [[1 0.1 0.1]],
-	shieldGoodColor			= [[0 0.2 1]],
-	InterceptType			= 511,
-	shieldInterceptType		= 511,
-	shieldPower				= 500,
-	shieldPowerRegen		= 0,
-	shieldPowerRegenEnergy	= 0,
-	shieldRadius			= 25,
-	shieldRepulser			= false,
-	--shieldforce				= 10000,
-	--shieldmaxspeed			= 10000,
-	shieldStartingPower		= 620,
-	smartShield				= true,
-	visibleShield			= true,
-	visibleShieldHitFrames	= 4,
-	visibleShieldRepulse	= true,
-	
+
+	shield = {
+		exterior			= true,
+		alpha				= 0.2,
+		badColor			= [[1 0.1 0.1]],
+		goodColor			= [[0 0.2 1]],
+		interceptType		= 511,
+		power				= 500,
+		powerRegen		= 0,
+		powerRegenEnergy	= 0,
+		radius			= 25,
+		repulser			= false,
+		startingPower		= 500,
+		smart			= true,
+		visible			= true,
+		visibleHitFrames	= 4,
+		visibleRepulse	= true,
+	}
+
 }
 
 return lowerkeys({[weaponName] = weaponDef})
