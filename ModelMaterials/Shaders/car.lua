@@ -17,22 +17,22 @@ return {
 
   #ifdef use_shadows
     uniform mat4 shadowMatrix;
-    varying vec4 shadowpos;
+    out vec4 shadowpos;
     #ifndef use_perspective_correct_shadows
       uniform vec4 shadowParams;
     #endif
   #endif
 
-    varying vec3 cameraDir;
-    varying vec3 teamColor;
-    //varying float fogFactor;
+    out vec3 cameraDir;
+    out vec3 teamColor;
+    //out float fogFactor;
 
   #ifdef use_normalmapping
-    varying vec3 t;
-    varying vec3 b;
-    varying vec3 n;
+    out vec3 t;
+    out vec3 b;
+    out vec3 n;
   #else
-    varying vec3 normalv;
+    out vec3 normalv;
   #endif
 
     void main(void)
@@ -97,22 +97,22 @@ return {
     #ifdef use_perspective_correct_shadows
       uniform vec4 shadowParams;
     #endif
-    varying vec4 shadowpos;
+    in vec4 shadowpos;
     uniform sampler2DShadow shadowTex;
     uniform float shadowDensity;
   #endif
 
-    varying vec3 teamColor;
-    varying vec3 cameraDir;
-    //varying float fogFactor;
+    in vec3 teamColor;
+    in vec3 cameraDir;
+    //in float fogFactor;
 
   #ifdef use_normalmapping
-    varying vec3 t;
-    varying vec3 b;
-    varying vec3 n;
+    in vec3 t;
+    in vec3 b;
+    in vec3 n;
     uniform sampler2D normalMap;
   #else
-    varying vec3 normalv;
+    in vec3 normalv;
   #endif
 
     void main(void)
