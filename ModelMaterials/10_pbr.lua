@@ -505,23 +505,6 @@ local function createNewMatDef(modelNiceName, pbrModel, pbrMap)
 	return newMat
 end
 
-local function TableEcho(data, name, indent)
-	indent = indent or ""
-	name = name or "TableEcho"
-	Spring.Echo(indent .. name .. " = {")
-	for name, v in pairs(data) do
-		local ty =  type(v)
-		if ty == "table" then
-			TableEcho(v, name, indent .. "    ")
-		elseif ty == "boolean" then
-			Spring.Echo(indent .. name .. " = " .. (v and "true" or "false"))
-		else
-			Spring.Echo(indent .. name .. " = " .. v)
-		end
-	end
-	Spring.Echo(indent .. "}")
-end
-
 for i = 1, #UnitDefs do
 	local udef = UnitDefs[i]
 	local modelNiceName = string.format("%s(%s)", udef.humanName, udef.name)
@@ -530,7 +513,6 @@ for i = 1, #UnitDefs do
 		local model = VFS.Include(modelFilename)
 		if model and model.pbr then
 			local pbrModel, pbrMap = sanitizePbrInputs(model.pbr, pbrMapRaw)
-			TableEcho(pbrModel, modelNiceName)
 			local pbrIndex = getPbrMaterialIndex(modelNiceName, pbrModel, pbrMap)
 			local pbrMatName = "pbr_" .. tostring(pbrIndex)
 			if not materials[pbrMatName] then
