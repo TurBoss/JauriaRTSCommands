@@ -14,10 +14,10 @@ return {
     uniform float frame2;
     uniform vec3  speed;
 
-    varying vec3 normal;
-    varying vec3 cameraDir;
-    varying vec3 teamColor;
-    varying vec3 light;
+    out vec3 normal;
+    out vec3 cameraDir;
+    out vec3 teamColor;
+    out vec3 light;
 
 
     void main(void)
@@ -60,10 +60,10 @@ return {
     uniform vec3 sunAmbient;
   #endif
 
-    varying vec3 normal;
-    varying vec3 cameraDir;
-    varying vec3 teamColor;
-    varying vec3 light;
+    in vec3 normal;
+    in vec3 cameraDir;
+    in vec3 teamColor;
+    in vec3 light;
 
     void main(void)
     {
