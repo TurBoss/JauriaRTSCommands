@@ -555,7 +555,7 @@ end
 VFS.Include("LuaUI/Utilities/json.lua");
 
 local function UTF8SupportCheck()
-	local version=Game.version
+	local version=Engine.version
 	local first_dot=string.find(version,"%.")
 	local major_version = (first_dot and string.sub(version,0,first_dot-1)) or version
 	local major_version_number = tonumber(major_version)

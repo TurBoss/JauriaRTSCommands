@@ -73,11 +73,11 @@ local function SpawnStartUnit(teamID)
 	end
 
 	-- set start resources, either from mod options or custom team keys
-	local teamOptions = select(7, Spring.GetTeamInfo(teamID))
-	local m = teamOptions.startmetal  or modOptions.startmetal  or 500
-	local e = teamOptions.startenergy or modOptions.startenergy or 5000
-	local ms = 5000
-	local es = 5000
+	--local teamOptions = select(7, Spring.GetTeamInfo(teamID))
+	--local m = teamOptions.startmetal  or modOptions.startmetal  or 500
+	--local e = teamOptions.startenergy or modOptions.startenergy or 5000
+	--local ms = 5000
+	--local es = 5000
 
 	-- using SetTeamResource to get rid of any existing resource without affecting stats
 	-- using AddTeamResource to add starting resource and counting it as income

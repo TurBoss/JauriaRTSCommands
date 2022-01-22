@@ -64,7 +64,7 @@ local transkey = include("Configs/transkey.lua")
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-local reverseCompat = (Game.version:find('91.0') == 1) and 1 or 0
+local reverseCompat = (Engine.version:find('91.0') == 1) and 1 or 0
 
 local Chili
 local Button
