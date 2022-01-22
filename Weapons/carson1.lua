@@ -26,14 +26,14 @@ local weaponDef = {
 	reloadtime              = 5,
 	range                   = 1000,
 	sprayAngle              = 100,
-	weaponaceleration       = 860,
+	weaponacceleration       = 860,
 	tolerance               = 3000,
 	lineOfSight             = true,
 	turret                  = true,
 	craterMult              = 0,
 	burst                   = 8,
 	burstrate               = 0.1,
-	proyectiles             = 1,
+	projectiles             = 1,
 	
 	--apperance
 	
