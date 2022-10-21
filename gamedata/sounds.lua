@@ -1,85 +1,128 @@
 local Sounds = {
 	SoundItems = {
-		--[[
-		-- these four entries are played by the engine for corresponding events
-		-- the referenced .wav files are *not* supplied by base content, change
-		-- them if uncommenting an entry
-		-- any other name is free to use; sounds can also be referred to by file
+		--- RESERVED FOR SPRING, DON'T REMOVE
 		IncomingChat = {
-			--- always play on the front speaker(s)
-			file = "sounds/beep4.wav",
-			in3d = "false",
+			file = "sounds/incoming_chat.ogg",
+			 rolloff = 0.1, 
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 1, ---how many maximum can we hear?
 		},
 		MultiSelect = {
-			--- always play on the front speaker(s)
-			file = "sounds/button9.wav",
-			in3d = "false",
+			file = "sounds/multiselect.ogg",
+			rolloff = 0.1, 
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 1, ---how many maximum can we hear?
 		},
 		MapPoint = {
-			--- respect where point was set, but don't attenuate over distance
-			--- also, when moving the camera, don't apply any pitch shift
-			file = "sounds/beep6.wav",
-			rolloff = 0,
-			dopplerscale = 0,
+			file = "sounds/mappoint.ogg",
+			rolloff = 0.1,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 1, ---how many maximum can we hear?
 		},
 		FailedCommand = {
-			file = "sounds/beep3.wav",
+			file = "sounds/mappoint.ogg",
+			rolloff = 0.1,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 1, ---how many maximum can we hear?
 		},
-		--]]
+		--- END RESERVED
 
-
-		ExampleSound = {
-			--- some things you can do with this file
-
-			--- can be either ogg or wav
-			file = "somedir/subdir/soundfile.ogg",
-
-			--- loudness, > 1 is louder, < 1  is more quiet, you will most likely not set it to 0
-			gain = 1,
-
-			--- > 1 -> high pitched, < 1 lowered
-			pitch = 1,
-
-			--- If > 0.0 then this adds a random amount to gain each time the sound is played.
-			--- Clamped between 0.0 and 1.0. The result is in the range [(gain * (1 + gainMod)), (gain * (1 - gainMod))].
-			gainmod = 0.0,
-
-			--- If > 0.0 then this adds a random amount to pitch each time the sound is played.
-			--- Clamped between 0.0 and 1.0. The result is in the range [(pitch * (1 + pitchMod)), (pitch * (1 - pitchMod))].
-			pitchmod = 0.0,
-
-			--- how unit / camera speed affects the sound, to exagerate it, use values > 1
-			--- dopplerscale = 0 completely disables the effect
-			dopplerscale = 1,
-
-			--- when lots of sounds are played, sounds with lower priority are more likely to get cut off
-			--- priority > 0 will never be cut of (priorities can be negative)
-			priority = 0,
-
-			--- this sound will not be played more than 16 times at a time
-			maxconcurrent = 16,
-
-			--- cutoff distance
-			maxdist = 20000,
-
-			--- how fast it becomes more quiet in the distance (0 means aleays the same loudness regardless of dist)
-			rolloff = 1,
-
-			--- non-3d sounds do always came out of the front-speakers (or the center one)
-			--- 3d sounds are, well, in 3d
-			in3d = true,
-
-			--- you can loop it for X miliseconds
-			looptime = 0,
+		--WEAPONS
+		
+		siren = { 
+			file = "sounds/siren.ogg",
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
 		},
-
+		mine1 = { 
+			file = "sounds/sboom.ogg",
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		carson1 = { 
+			file = "sounds/Gun2.ogg",
+			gain = 2.0,
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		carson2 = { 
+			file = "sounds/M4Shoot.ogg",
+			gain = 0.7,
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 20, ---how many maximum can we hear?
+		},
+		kortus1 ={ 
+			file = "sounds/Shootgunbig.ogg",
+			rolloff=3,
+			gain = 0.5,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		kortus2 ={ 
+			file = "sounds/Shootgun2.ogg",
+			gain = 0.6,
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		kortus3 ={ 
+			file = "sounds/Stun.ogg", 
+			gain = 0.5,
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		erzeus1 ={ 
+			file = "sounds/Sniper.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		erzeus2 ={ 
+			file = "sounds/SniperRifle.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
+		stirek1 ={ 
+			file = "sounds/Laser.ogg", 
+			rolloff=3,
+			dopplerscale = 0,
+			maxdist = 10000,
+			priority = 100, --- higher numbers = less chance of cutoff
+			maxconcurrent = 5, ---how many maximum can we hear?
+		},
 		default = {
-			--- new since 89.0
-			--- you can overwrite the fallback profile here (used when no corresponding SoundItem is defined for a sound)
-			--gainmod = 0.35,
-			--pitchmod = 0.3,
-			--pitch = 0.7,
-			--in3d = true,
+			gainmod = 0.35,
+			pitchmod = 0.3,
+			pitch = 0.7,
+			in3d = true,
 		},
 	},
 }

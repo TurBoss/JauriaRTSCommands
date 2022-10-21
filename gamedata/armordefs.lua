@@ -1,45 +1,66 @@
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---
---  file:    armordefs.lua
---  brief:   armor.txt lua parser
---  author:  Dave Rodgers
---
---  Copyright (C) 2007.
---  Licensed under the terms of the GNU GPL, v2 or later.
---
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+local armorDefs = {
+	heavyarmor = {
+		"fabricaporreton",
+		"fabricacaos",
+		"fabricaheks",
+		"fabricaeurope",
+		--------------
+		"ftkt4",
+		"enk3",
+		"hdt6",
+		"glz5",
+		--------------
+		"gheiknado",
+		"chaerik",
+		"dhipso",
+		--------------
+		"gjuggernaut",
+		"harchaon",
+		"dbesieger",
+		"aadept",
+		"fdesolator",
+		--------------
+		"fscorpio",
+		"gtaurus",
+		"hatlas",
+	},
+	lightarmor = {
+		"cnm1",
+		"bit0",
+		"arc",
+		"drk2",
+		--------------
+		"bheik",
+		"ehekor",
+		"fhaek",
+		"aheiker",
+		"hheibok",
+		--------------
+		"braider",
+		"cmarauder",
+		"eputris",
+		--------------
+		"aprospector",
+		"bmilitia",
+		"cberserker",
+		"doverkraft",
+		"evalkyria",
+	},
+	torrearmor = {
+		"torreta",
+		"torretapro",
+		"torrun",
+	},
+}
 
-
-local tdfFile = 'armor.txt'
-if (not VFS.FileExists(tdfFile)) then
-  return {}
-end
-
-
-local TDF = VFS.Include('gamedata/parse_tdf.lua')
-local armorDefs, err = TDF.Parse(tdfFile)
-if (armorDefs == nil) then
-  error('Error parsing armor.txt: ' .. err)
-end
-
-for categoryName, categoryTable in pairs(armorDefs) do
-  local t = {}
-  -- convert all ArmorDef <key,value> subtables to
-  -- array-format (engine expects this as of 95.0;
-  -- values were never used and had no meaning)
-  for unitName,_ in pairs(categoryTable) do
-    t[#t + 1] = unitName
+if not(Game) or not(Game.version) then
+  for categoryName, categoryTable in pairs(armorDefs) do
+    local t = {}
+    for _, unitName in pairs(categoryTable) do
+      t[unitName] = 1
+    end
+    armorDefs[categoryName] = t
   end
-
-  armorDefs[categoryName] = t
 end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 return armorDefs
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------

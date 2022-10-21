@@ -1,45 +1,53 @@
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---
---  file:    movedefs.lua
---  brief:   moveinfo.tdf lua parser
---  author:  Dave Rodgers
---
---  Copyright (C) 2007.
---  Licensed under the terms of the GNU GPL, v2 or later.
---
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+local moveDefs =
+{
+	{
+	name = "Default1x1",
+	footprintX = 1,
+	maxWaterDepth = 10,
+	crushStrength = 10,
+	MaxSlope = 30,
+	maxHeightDif= 10,
+	},
+	{
+	name = "Default2x2",
+	footprintX = 2,
+	maxWaterDepth = 10,
+	maxSlope = 20,
+	crushStrength = 100,
+	},
+	
+	{
+	name = "Default3x3",
+	footprintX = 3,
+	maxWaterDepth = 10,
+	maxSlope = 20,
+	crushStrength = 100,
+	},
+	
+	{
+	name = "Default4x4",
+	footprintX = 4,
+	maxWaterDepth = 10,
+	maxSlope = 20,
+	crushStrength = 125,
+	},
+	
+	{
+	name = "Spider1x1",
+	footprintX = 1,
+	maxWaterDepth = 10,
+	crushStrength = 10,
+	maxHeightDif= 10,
+	},
+	
+	{
+	name = "Hover2x2",
+	footprintX = 2,
+	maxWaterDepth = 5000,
+	maxSlope = 20,
+	crushStrength = 25,
+	hover = true,
+	},
+}
 
-
-local tdfFile = 'gamedata/moveinfo.tdf'
-if (not VFS.FileExists(tdfFile)) then
-  return {}
-end
-
-
-local TDF = VFS.Include('gamedata/parse_tdf.lua')
-local moveTdf, err = TDF.Parse(tdfFile)
-if (moveTdf == nil) then
-  error('Error parsing moveinfo.tdf: ' .. err)
-end
-
-local moveInfo = {}
-local i = 0
-while (true) do
-  local move = moveTdf['class' .. i]
-  if (type(move) ~= 'table') then
-    break
-  end
-  i = i + 1
-  moveInfo[i] = move
-end
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-return moveInfo
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+return moveDefs

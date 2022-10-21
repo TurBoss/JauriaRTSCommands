@@ -22,21 +22,21 @@ end
 local nightColorMap        = {{0.2, 0.2, 0.2}, --midnight
                               {0.2, 0.2, 0.2},
                               {0.2, 0.2, 0.2},
-                              
+
 							  {0.2, 0.4, 0.6}, --dawn
                               {1, 0.8, 0.6},
                               {1, 1, 1},
                               {1, 1, 1},
-                              
+
                               {1, 1, 1}, --noon
                               {1, 1, 1},
                               {1, 1, 1},
-                              
+
                               {1, 0.8, 0.6}, --sunset
                               {0.2, 0.4, 0.6},
 							  {0.2, 0.2, 0.2},
                               {0.2, 0.2, 0.2},}
-                              
+
 local searchlightBeamColor = {1, 1, 0.75, 0.05}  --searchlight beam color
 local searchlightStrength  = 0.6                 --searchlight strength; <= 0 to turn off
 local searchlightHeightOffset = 1              --raises searchlight above unit's feet by this multiple of the unit's radius
@@ -107,29 +107,29 @@ options = {
 	time = {
 		name = "Time of day",
 		type = 'number',
-		min = 0, 
-		max = 0.5, 
+		min = 0,
+		max = 0.5,
 		step = 0.05,
 		value = 0.4,
 		desc = 'Starting Time of day.\n <--Midnight, Noon-->',
 		OnChange = function(self)
 			currDayTime = self.value
 			UpdateColors()
-		end, 
+		end,
 	},
 	secperday = {
 		name = "Game Minute Per Day",
 		type = 'number',
-		min = 1, 
-		max = 20, 
-		step = 1,		
+		min = 1,
+		max = 20,
+		step = 1,
 		value = 2,
 		OnChange = function(self)
 			secondsPerDay = self.value*60
 			UpdateDayPeriod()
-			Spring.Echo(self.value .. " Minute") 
+			Spring.Echo(self.value .. " Minute")
 		end,
-	},	
+	},
 	beam = {
 		name = "Searchlight Beams",
 		type = 'bool',
@@ -204,19 +204,19 @@ UpdateColors = function()
   local currHourPart = currDayTime * hoursPerDay - currHour + 1 -- (realnumber(0..1) * 14) - integer[1..14] + 1 = realnumber(0..1)
   local startColor = nightColorMap[currHour]
   local endColor
-  if (currHour == hoursPerDay) then 
-    endColor = nightColorMap[1] 
-  else 
+  if (currHour == hoursPerDay) then
+    endColor = nightColorMap[1]
+  else
     endColor = nightColorMap[currHour+1]
   end
-  
+
   currColor = {(1 - currHourPart) * startColor[1] + currHourPart * endColor[1],
                (1 - currHourPart) * startColor[2] + currHourPart * endColor[2],
                (1 - currHourPart) * startColor[3] + currHourPart * endColor[3],
                1}
-  currColorInverse = {(1 / currColor[1] - 1) * searchlightStrength, 
-                      (1 / currColor[2] - 1) * searchlightStrength, 
-                      (1 / currColor[3] - 1) * searchlightStrength, 
+  currColorInverse = {(1 / currColor[1] - 1) * searchlightStrength,
+                      (1 / currColor[2] - 1) * searchlightStrength,
+                      (1 / currColor[3] - 1) * searchlightStrength,
                        1}
 end
 
@@ -231,7 +231,7 @@ local function BaseVertices(baseX, baseZ, radius, ecc, heading,yOffset)
     local vz = baseZ + radius * math.sin(theta) / denom
     local vy = yOffset or math.max(GetGroundHeight(vx, vz), 0) --follow ground contour
     glVertex(vx, vy, vz)
-    theta = theta + searchlightVertexIncrement * denom 
+    theta = theta + searchlightVertexIncrement * denom
   end
   local denom = 1 - ecc
   local vx = baseX + radius * math.cos(heading) / denom
@@ -260,7 +260,7 @@ end
 
 local function DrawNight()
   glBlending(GL_ZERO, GL_SRC_COLOR)
-  
+
   glMatrixMode(GL_PROJECTION)
   glPushMatrix()
   glLoadIdentity()
@@ -275,22 +275,22 @@ local function DrawNight()
   glPopMatrix()
   glMatrixMode(GL_MODELVIEW)
   glPopMatrix()
-  
+
   glColor(1, 1, 1, 1)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 end
 
 local function DrawSearchlights()
   if (searchlightVertexCount < 2) then return end
-  if (options.bases.value == "none") and (options.beam.value == false) then return end 
-  
+  if (options.bases.value == "none") and (options.beam.value == false) then return end
+
   local visibleUnits = GetVisibleUnits(-1, 30, false)
   local cx, cy, cz = GetCameraPosition()
   local timeFromNoon = math.abs(currDayTime - 0.5)
-  
+
   glTranslate(0, 0, 0)
   glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
-  
+
   for _, unitID in pairs(visibleUnits) do
 	if GetUnitPosition(unitID) and not GetUnitIsDead(unitID) then
 		local _, _, _, _, buildProgress = GetUnitHealth(unitID)
@@ -302,7 +302,7 @@ local function DrawSearchlights()
 		local groundy = math.max(GetGroundHeight(px, pz), 0)
 		local absHeight = py - groundy
 		local unitDef = UnitDefs[defID]
-		
+
 		if (unitDef
 			and absHeight > 0
 			and (not buildProgress or buildProgress >= 1)
@@ -319,7 +319,7 @@ local function DrawSearchlights()
 		  local speed = unitDef.speed
 		  local leadDist_to_height_ratio = 1
 		  local isAboveNominalHeight = false
-		  
+
 		  if (not speed or speed == 0) then
 			cache[defID]= cache[defID] or {}
 			if not cache[defID].leadDist then
@@ -333,7 +333,7 @@ local function DrawSearchlights()
 			leadDistance = cache[defID].leadDist
 			leadDist_to_height_ratio = cache[defID].lhRatio
 			radius = unitRadius
-		  elseif (reverseCompatibility and (unitDef.type == "Bomber" or unitDef.type == "Fighter") or 
+		  elseif (reverseCompatibility and (unitDef.type == "Bomber" or unitDef.type == "Fighter") or
 		  (unitDef.isBomberAirUnit or unitDef.isFighterAirUnit)) then --https://github.com/spring/spring/blob/develop/doc/changelog.txt
 			local vx, _, vz = GetUnitVelocity(unitID)
 			if not vx or not vz then --sometimes happen when seeing enemy airplane
@@ -359,7 +359,7 @@ local function DrawSearchlights()
 			end
 		    heading = -1*(GetUnitHeading(unitID) or 0) * RADIANS_PER_COBANGLE + math.pi / 2
 			leadDistance = cache[defID].leadDist
-			relativeHeight = cache[defID].relativeY 
+			relativeHeight = cache[defID].relativeY
 			leadDist_to_height_ratio = cache[defID].lhRatio
 			radius = unitRadius * 2
 		  else
@@ -381,11 +381,11 @@ local function DrawSearchlights()
 		  baseX = px + newLeadDist * math.cos(heading)
 		  baseZ = pz + newLeadDist * math.sin(heading)
 		  ecc = math.min(1 - 2 / (newLeadDist / absHeight + 2), 0.75)
-		  
+
 		  --base
 		  glBlending(GL_DST_COLOR, GL_ONE)
 		  glColor(currColorInverse)
-		  
+
 		  --scale radius based on height--
 		  if cache[defID] and not cache[defID].rlRatio then
 			cache[defID].rlRatio = radius/math.sqrt(leadDistance*leadDistance+ relativeHeight*relativeHeight)
@@ -400,7 +400,7 @@ local function DrawSearchlights()
 		  else
 			radius = newRadius
 		  end
-		  
+
 		  if not isAboveNominalHeight then
 			  if (options.bases.value == "full") then --highlight ground
 				glDepthTest(true)
@@ -410,23 +410,23 @@ local function DrawSearchlights()
 				glBeginEnd(GL_POLYGON, BaseVertices, baseX, baseZ, radius, ecc, heading)
 			  end
 		  end
-		  
+
 		  --beam
 		  glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-		  
+
 		  if (options.beam.value) then
 			glColor(searchlightBeamColor)
 			glDepthTest(true)
 			glBeginEnd(GL_TRIANGLE_FAN, BeamVertices, baseX, baseZ, radius, ecc, heading, px, py, pz,isAboveNominalHeight and absHeight-relativeHeight*maxBeamDivergent)
 		  end
-		  
+
 		  glColor(1, 1, 1, 1)
 		  glDepthTest(false)
-		  
+
 		end
 	end
   end
-  
+
 end
 
 local function TogglePreUnit()
@@ -480,20 +480,20 @@ function widget:Initialize()
   currDayTime = options.time.value or startDayTime
   UpdateColors()
   vsx, vsy = widgetHandler:GetViewSizes()
-  
+
   for unitDefID, unitDef in pairs(UnitDefs) do
-    if (   string.find(unitDef.name, "chicken") 
-        or string.find(unitDef.name, "roost") 
+    if (   string.find(unitDef.name, "chicken")
+        or string.find(unitDef.name, "roost")
         or string.find(unitDef.humanName, "Chicken")
         or string.find(unitDef.humanName, "Montro")
-        or (unitDef.speed == 0 and not 
+        or (unitDef.speed == 0 and not
              (unitDef.weapons and unitDef.weapons[1]))
        ) then
       noLightList[unitDefID] = true
     end
   end
 
-  --[[  
+  --[[
   widgetHandler:AddAction("night_preunit", TogglePreUnit, nil, "t")
   widgetHandler:AddAction("night_basetype", SetBaseType, nil, "t")
   widgetHandler:AddAction("night_beam", ToggleBeam, nil, "t")

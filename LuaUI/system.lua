@@ -27,14 +27,15 @@ if (System == nil) then
     VFS = VFS,
     Script = Script,
     Spring = Spring,
+    Engine = Engine,
+    Platform = Platform,
     Game = Game,
-    LuaLobby = LuaLobby,
     gl = gl,
     GL = GL,
     CMD = CMD,
     CMDTYPE = CMDTYPE,
     LOG = LOG,
-    
+
     UnitDefs        = UnitDefs,
     UnitDefNames    = UnitDefNames,
     FeatureDefs     = FeatureDefs,
@@ -53,18 +54,18 @@ if (System == nil) then
     string = string,
     package = package,
     coroutine = coroutine,
-    
+
     -- luasocket
     socket          = socket,
 
-    --  
+    --
     --  Standard functions and variables
     --
     assert         = assert,
     error          = error,
 
     print          = print,
-    
+
     next           = next,
     pairs          = pairs,
     ipairs         = ipairs,
@@ -78,7 +79,6 @@ if (System == nil) then
 
     unpack         = unpack,
     select         = select,
-    newproxy       = newproxy,
 
     dofile         = dofile,
     loadfile       = loadfile,

@@ -1,59 +1,24 @@
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---
---  file:    modrules.lua
---  brief:   modrules.tdf and sensors.tdf lua parser
---  author:  Dave Rodgers, Craig Lawrence
---  notes:   Spring.GetModOptions() is available
---
---  Copyright (C) 2007.
---  Licensed under the terms of the GNU GPL, v2 or later.
---
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+local modrules = {
 
-local TDF = VFS.Include('gamedata/parse_tdf.lua')
+	experience = {
+		experienceMult = 1.0; -- defaults to 1.0
+		-- these are all used in the following form:
+		-- value = defValue * (1 + (scale * (exp / (exp + 1))))
+		powerScale = 0.3; -- defaults to 1.0
+		healthScale = 0; -- defaults to 0.7
+		reloadScale = 0; -- defaults to 0.4
+	},
+	
+	reclaim = {
+		multiReclaim = 1,
+		reclaimMethod = 0,
+		allowAllies = false,
+		allowEnemies = false,
+	},
+	
+	featureLOS = {
+		featureVisibility = 3,
+	}
+}
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-local modRules = {}
-
-
-local haveRules   = false
-local haveSensors = false
-local section =  'modrules.lua'
-
-
-if (VFS.FileExists('gamedata/modrules.tdf')) then
-	local err
-	modRules, err = TDF.Parse('gamedata/modrules.tdf')
-	if (modRules == nil) then
-		Spring.Log(section, LOG.ERROR, 'Error parsing modrules.tdf: ' .. err)
-	end
-	haveRules = true
-end
-
-
-if (VFS.FileExists('gamedata/sensors.tdf')) then
-	local sensors, err = TDF.Parse('gamedata/sensors.tdf')
-	if (sensors == nil)  then
-		Spring.Log(section, LOG.ERROR, 'Error parsing sensors.tdf: ' .. err)
-	end
-	modRules.sensors = sensors
-	haveSensors = true
-end
-
-
-if (not (haveRules or haveSensors)) then
-	return {}
-end
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-return modRules
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+return modrules
